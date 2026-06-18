@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///Users/adenademonte/Downloads/index_24.html -->
+<!-- saved from url=(0050)file:///Users/adenademonte/Downloads/index_25.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,9 +127,9 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
     <span class="header-sub">Commercial · FY27</span>
   </div>
   <div class="header-tabs">
-    <button class="tab-btn" onclick="switchTab(&#39;plan&#39;)">Plan</button>
+    <button class="tab-btn active" onclick="switchTab(&#39;plan&#39;)">Plan</button>
     <button class="tab-btn" onclick="switchTab(&#39;actuals&#39;)">Actuals</button>
-    <button class="tab-btn active" onclick="switchTab(&#39;vs&#39;)">Plan vs. Actual</button>
+    <button class="tab-btn" onclick="switchTab(&#39;vs&#39;)">Plan vs. Actual</button>
   </div>
   <span class="fy-badge">FY27</span>
 </header>
@@ -214,7 +214,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
   </div>
 
   <!-- PLAN TAB -->
-  <div id="tab-plan" class="tab-panel">
+  <div id="tab-plan" class="tab-panel active">
     <div class="card">
       <div class="card-header"><h3>Monthly plan — FY27 closes highlighted</h3></div>
       <div class="table-wrap">
@@ -296,7 +296,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
           <div class="leg-item"><div class="leg-sq" style="background:#C8C8C0"></div>FY28 pipeline</div>
           <div class="leg-item"><div class="leg-sq" style="background:var(--cassava);height:3px;border-radius:0;align-self:center"></div>Pace target</div>
         </div>
-        <div class="chart-wrap"><canvas id="plan-chart" style="box-sizing: border-box; display: block; height: 0px; width: 0px;" width="0" height="0"></canvas></div>
+        <div class="chart-wrap"><canvas id="plan-chart" width="1556" height="420" style="display: block; box-sizing: border-box; height: 210px; width: 778px;"></canvas></div>
       </div>
     </div>
     <div class="card">
@@ -385,7 +385,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
           <div class="leg-item"><div class="leg-sq" style="background:#BBF7D0;height:3px;border-radius:0;align-self:center"></div>Cumulative plan</div>
           <div class="leg-item"><div class="leg-sq" style="background:var(--green);height:3px;border-radius:0;align-self:center"></div>Cumulative actual</div>
         </div>
-        <div class="chart-wrap"><canvas id="s2-chart" style="box-sizing: border-box; display: block; height: 0px; width: 0px;" width="0" height="0"></canvas></div>
+        <div class="chart-wrap"><canvas id="s2-chart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
         <div id="s2-summary" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;flex:1;min-width:110px">
     <div style="font-size:18px;font-weight:700;color:var(--red)">0</div>
     <div style="font-size:11px;color:var(--text-muted)">Actual S2s to date</div></div><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;flex:1;min-width:110px">
@@ -493,7 +493,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
   </div>
 
   <!-- PLAN VS ACTUAL TAB -->
-  <div id="tab-vs" class="tab-panel active">
+  <div id="tab-vs" class="tab-panel">
     <div class="card">
       <div class="card-header"><h3>S2 opps: plan vs. actual</h3></div>
       <div style="padding:14px 16px">
@@ -503,7 +503,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
           <div class="leg-item"><div class="leg-sq" style="background:#BBF7D0;height:3px;border-radius:0;align-self:center"></div>Cum. plan</div>
           <div class="leg-item"><div class="leg-sq" style="background:var(--green);height:3px;border-radius:0;align-self:center"></div>Cum. actual</div>
         </div>
-        <div class="chart-wrap"><canvas id="vs-s2-chart" style="box-sizing: border-box; display: block; height: 210px; width: 1012px;" width="2025" height="420"></canvas></div>
+        <div class="chart-wrap"><canvas id="vs-s2-chart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
       </div>
     </div>
     <div class="card">
@@ -557,7 +557,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
           <div class="leg-item"><div class="leg-sq" style="background:#C8C8C0"></div>Plan</div>
           <div class="leg-item"><div class="leg-sq" style="background:var(--cacao)"></div>Actual</div>
         </div>
-        <div class="chart-wrap"><canvas id="vs-spend-chart" style="box-sizing: border-box; display: block; height: 210px; width: 1012px;" width="2025" height="420"></canvas></div>
+        <div class="chart-wrap"><canvas id="vs-spend-chart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
       </div>
     </div>
     <div class="card">
@@ -567,7 +567,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
           <div class="leg-item"><div class="leg-sq" style="background:var(--cassava)"></div>Plan</div>
           <div class="leg-item"><div class="leg-sq" style="background:var(--green)"></div>Actual</div>
         </div>
-        <div class="chart-wrap"><canvas id="vs-rev-chart" style="box-sizing: border-box; display: block; height: 210px; width: 1012px;" width="2025" height="420"></canvas></div>
+        <div class="chart-wrap"><canvas id="vs-rev-chart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
       </div>
     </div>
     <div class="card">
@@ -653,7 +653,15 @@ function switchTab(name) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   event.currentTarget.classList.add('active');
-  setTimeout(() => { updateAll.skipForm=true; updateAll(); updateAll.skipForm=false; }, 60);
+  // Re-render after tab is visible so charts get correct dimensions
+  setTimeout(() => {
+    updateAll.skipForm = true;
+    updateAll();
+    updateAll.skipForm = false;
+    [planChart, s2Chart, vsS2Chart, vsSpendChart, vsRevChart].forEach(c => {
+      if(c) c.resize();
+    });
+  }, 60);
 }
 
 // ── Charts ────────────────────────────────────────────────────────────────────
@@ -941,6 +949,15 @@ document.querySelectorAll('input[type=range]').forEach(el=>el.addEventListener('
 }));
 updateAll.skipForm=false;
 updateAll();
+
+// Force charts to resize after full page load — fixes blank charts in hidden tabs on Vercel
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    [planChart, s2Chart, vsS2Chart, vsSpendChart, vsRevChart].forEach(c => {
+      if(c) c.resize();
+    });
+  }, 200);
+});
 </script>
 
 
