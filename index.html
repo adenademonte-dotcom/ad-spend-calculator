@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///Users/adenademonte/Downloads/index_27.html -->
+<!-- saved from url=(0050)file:///Users/adenademonte/Downloads/index_28.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,948 +10,723 @@
   --cacao:#1a1a1a; --cassava:#F5C842; --cassava-light:#FDF3C0;
   --surface:#fff; --surface-2:#F7F7F5; --surface-3:#EFEFEB;
   --border:#E4E4DE; --border-strong:#C8C8C0;
-  --text-primary:#1a1a1a; --text-secondary:#6B6B65; --text-muted:#9B9B94;
-  --green:#16A34A; --green-bg:#F0FDF4; --green-border:#BBF7D0;
-  --red:#DC2626; --red-bg:#FEF2F2; --red-border:#FECACA;
-  --amber:#D97706; --amber-bg:#FFFBEB; --amber-border:#FDE68A;
-  --blue:#2563EB; --blue-bg:#EFF6FF; --blue-border:#BFDBFE;
-  --li-blue:#0A66C2; --g-red:#EA4335;
-  --radius:8px; --radius-lg:12px;
+  --tx:#1a1a1a; --tx2:#6B6B65; --txm:#9B9B94;
+  --green:#16A34A; --gbg:#F0FDF4; --gbr:#BBF7D0;
+  --red:#DC2626; --rbg:#FEF2F2; --rbr:#FECACA;
+  --amber:#D97706; --abg:#FFFBEB; --abr:#FDE68A;
+  --blue:#2563EB; --bbg:#EFF6FF; --bbr:#BFDBFE;
+  --li:#0A66C2; --gg:#EA4335;
+  --r:8px; --rl:12px;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Inter', -apple-system, sans-serif; background: var(--surface-2); color: var(--text-primary); font-size: 14px; line-height: 1.5; }
-
-header { background: var(--cacao); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 52px; position: sticky; top: 0; z-index: 100; }
-.header-left { display: flex; align-items: center; gap: 12px; }
-.logo-mark { width: 28px; height: 28px; background: var(--cassava); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 13px; color: var(--cacao); }
-.header-title { color: #fff; font-size: 13px; font-weight: 500; }
-.header-sub { color: #888; font-size: 12px; margin-left: 8px; }
-.fy-badge { background: var(--cassava); color: var(--cacao); font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
-.header-tabs { display: flex; gap: 4px; }
-.tab-btn { background: transparent; border: 1px solid #444; color: #aaa; font-size: 12px; font-weight: 500; padding: 5px 14px; border-radius: 5px; cursor: pointer; transition: all .15s; }
-.tab-btn.active { background: var(--cassava); border-color: var(--cassava); color: var(--cacao); }
-.tab-btn:hover:not(.active) { border-color: #888; color: #fff; }
-
-.layout { max-width: 1200px; margin: 0 auto; padding: 1.5rem; display: grid; grid-template-columns: 320px 1fr; gap: 1.25rem; align-items: start; }
-.sidebar { display: flex; flex-direction: column; gap: 1rem; position: sticky; top: 52px; height: calc(100vh - 68px); overflow-y: auto; overflow-x: visible; padding-bottom: 1rem; scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
-.sidebar::-webkit-scrollbar { width: 4px; }
-.sidebar::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
-.main { display: flex; flex-direction: column; gap: 1.25rem; }
-
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); }
-.card-header { padding: 11px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
-.card-header h3 { font-size: 12px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .5px; }
-.card-body { padding: 14px 16px 20px; display: flex; flex-direction: column; gap: 12px; }
-.channel-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.divider { height: 1px; background: var(--border); }
-
-.slider-group { display: flex; flex-direction: column; gap: 5px; }
-.slider-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.slider-lbl { font-size: 12px; color: var(--text-secondary); flex: 1; }
-.slider-val { font-size: 12px; font-weight: 600; color: var(--text-primary); white-space: nowrap; flex-shrink: 0; }
-input[type=range] { -webkit-appearance: none; width: 100%; height: 4px; background: var(--surface-3); border-radius: 2px; outline: none; cursor: pointer; display: block; margin: 2px 0 4px; }
-input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--cacao); border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--border-strong); cursor: pointer; }
-
-.ratio-bar { display: flex; height: 22px; border-radius: 5px; overflow: hidden; font-size: 10px; font-weight: 600; }
-.ratio-li { background: var(--li-blue); color: #fff; display: flex; align-items: center; justify-content: center; transition: width .3s; }
-.ratio-g { background: var(--g-red); color: #fff; display: flex; align-items: center; justify-content: center; transition: width .3s; }
-.ratio-meta { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
-.ratio-meta strong { color: var(--text-primary); }
-
-.metrics-sticky { position: sticky; top: 52px; z-index: 10; background: var(--surface-2); padding-bottom: .5rem; }
-.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; margin-bottom: 8px; }
-.metric { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 12px 14px; }
-.metric.hi { background: var(--cacao); border-color: var(--cacao); }
-.metric.hi .mval { color: var(--cassava); }
-.metric.hi .mlbl { color: #888; }
-.mval { font-family: 'Inter Tight', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.1; }
-.mlbl { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
-.bench-bar { font-size: 11px; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 9px 14px; display: flex; gap: 20px; flex-wrap: wrap; }
-.alert { border-radius: var(--radius); padding: 9px 14px; font-size: 12px; display: none; margin-top: 4px; }
-.alert.show { display: block; }
-.alert-ok { background: var(--green-bg); border: 1px solid var(--green-border); color: var(--green); }
-.alert-warn { background: var(--amber-bg); border: 1px solid var(--amber-border); color: var(--amber); }
-
-.table-wrap { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-thead th { text-align: left; font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .4px; padding: 7px 9px; border-bottom: 1px solid var(--border); white-space: nowrap; background: var(--surface-2); }
-tbody td { padding: 7px 9px; border-bottom: 1px solid var(--border); color: var(--text-primary); vertical-align: middle; }
-tbody tr:last-child td { border-bottom: none; }
-tbody tr.fy28 td { color: var(--text-muted); background: var(--surface-2); }
-tfoot td { padding: 8px 9px; font-weight: 600; font-size: 12px; border-top: 2px solid var(--border-strong); background: var(--surface-2); }
-tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
-.li-tag { color: var(--li-blue); font-weight: 600; }
-.g-tag { color: var(--g-red); font-weight: 600; }
-
-.badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px; white-space: nowrap; }
-.bg { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
-.by { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
-.br { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
-.bb { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
-.bgr { background: var(--surface-3); color: var(--text-muted); border: 1px solid var(--border); }
-
-.chart-wrap { position: relative; width: 100%; height: 220px; margin: 8px 0; }
-.chart-wrap canvas { display: block; }
-.chart-leg { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
-.leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text-secondary); }
-.leg-sq { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
-
-.tab-panel { display: none; }
-.tab-panel.active { display: flex; flex-direction: column; gap: 1.25rem; }
-
-.sens-cur { background: var(--cassava-light) !important; font-weight: 600; }
-
-.actuals-form input[type=number] { width: 90px; padding: 4px 7px; border: 1px solid var(--border); border-radius: 5px; font-size: 12px; font-family: inherit; background: var(--surface); outline: none; }
-.actuals-form input[type=number]:focus { border-color: var(--cacao); }
-.save-btn { background: var(--cacao); color: #fff; border: none; padding: 8px 20px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit; }
-.save-btn:hover { opacity: .85; }
-.saved-msg { font-size: 12px; margin-left: 10px; display: none; }
-.var-pos { color: var(--green); font-weight: 600; }
-.var-neg { color: var(--red); font-weight: 600; }
-.tenx { background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--amber); border-radius: var(--radius); padding: 13px 16px; font-size: 12px; line-height: 1.7; color: var(--text-secondary); }
-.tenx strong { color: var(--text-primary); }
-
-@media(max-width: 900px) {
-  .layout { grid-template-columns: 1fr; }
-  .sidebar { position: static; height: auto; }
-  .metrics-sticky { position: static; }
-  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--surface-2);color:var(--tx);font-size:14px;line-height:1.5}
+header{background:var(--cacao);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:52px;position:sticky;top:0;z-index:100}
+.hl{display:flex;align-items:center;gap:12px}
+.lm{width:28px;height:28px;background:var(--cassava);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Inter Tight',sans-serif;font-weight:700;font-size:13px;color:var(--cacao)}
+.ht{color:#fff;font-size:13px;font-weight:500}
+.hs{color:#888;font-size:12px;margin-left:8px}
+.fyb{background:var(--cassava);color:var(--cacao);font-size:11px;font-weight:600;padding:3px 8px;border-radius:4px}
+.tabs{display:flex;gap:4px}
+.tb{background:transparent;border:1px solid #444;color:#aaa;font-size:12px;font-weight:500;padding:5px 14px;border-radius:5px;cursor:pointer;transition:all .15s;font-family:inherit}
+.tb.on{background:var(--cassava);border-color:var(--cassava);color:var(--cacao)}
+.tb:hover:not(.on){border-color:#888;color:#fff}
+.lay{max-width:1200px;margin:0 auto;padding:1.5rem;display:grid;grid-template-columns:300px 1fr;gap:1.25rem;align-items:start}
+.sb{display:flex;flex-direction:column;gap:.875rem;position:sticky;top:52px;height:calc(100vh - 68px);overflow-y:auto;overflow-x:visible;padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:var(--border-strong) transparent}
+.sb::-webkit-scrollbar{width:4px}
+.sb::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:2px}
+.mn{display:flex;flex-direction:column;gap:1.25rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl)}
+.ch{padding:10px 15px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;border-radius:var(--rl) var(--rl) 0 0}
+.ch h3{font-size:11px;font-weight:600;color:var(--tx2);text-transform:uppercase;letter-spacing:.5px}
+.cb{padding:13px 15px 18px;display:flex;flex-direction:column;gap:11px}
+.cd{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dv{height:1px;background:var(--border)}
+.sg{display:flex;flex-direction:column;gap:4px}
+.sr{display:flex;justify-content:space-between;align-items:baseline;gap:6px}
+.sl{font-size:12px;color:var(--tx2);flex:1}
+.sv{font-size:12px;font-weight:600;white-space:nowrap;flex-shrink:0}
+input[type=range]{-webkit-appearance:none;width:100%;height:4px;background:var(--surface-3);border-radius:2px;outline:none;cursor:pointer;display:block;margin:2px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;border-radius:50%;background:var(--cacao);border:2px solid #fff;box-shadow:0 0 0 1px var(--border-strong);cursor:pointer}
+.rb{display:flex;height:22px;border-radius:5px;overflow:hidden;font-size:10px;font-weight:600}
+.rli{background:var(--li);color:#fff;display:flex;align-items:center;justify-content:center;transition:width .3s}
+.rgg{background:var(--gg);color:#fff;display:flex;align-items:center;justify-content:center;transition:width .3s}
+.rm{font-size:11px;color:var(--txm);margin-top:4px}
+.rm strong{color:var(--tx)}
+.mst{position:sticky;top:52px;z-index:10;background:var(--surface-2);padding-bottom:.5rem}
+.mg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}
+.mc{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:11px 13px}
+.mc.hi{background:var(--cacao);border-color:var(--cacao)}
+.mc.hi .mv{color:var(--cassava)}
+.mc.hi .ml{color:#888}
+.mv{font-family:'Inter Tight',sans-serif;font-size:19px;font-weight:700;line-height:1.1}
+.ml{font-size:11px;color:var(--txm);margin-top:3px}
+.bb2{font-size:11px;color:var(--txm);background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:8px 13px;display:flex;gap:18px;flex-wrap:wrap}
+.al{border-radius:var(--r);padding:8px 13px;font-size:12px;display:none;margin-top:4px}
+.al.on{display:block}
+.al-ok{background:var(--gbg);border:1px solid var(--gbr);color:var(--green)}
+.al-w{background:var(--abg);border:1px solid var(--abr);color:var(--amber)}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead th{text-align:left;font-size:11px;font-weight:600;color:var(--txm);text-transform:uppercase;letter-spacing:.4px;padding:6px 8px;border-bottom:1px solid var(--border);white-space:nowrap;background:var(--surface-2)}
+tbody td{padding:6px 8px;border-bottom:1px solid var(--border);vertical-align:middle}
+tbody tr:last-child td{border-bottom:none}
+tbody tr.f8 td{color:var(--txm);background:var(--surface-2)}
+tfoot td{padding:7px 8px;font-weight:600;font-size:12px;border-top:2px solid var(--border-strong);background:var(--surface-2)}
+tfoot tr:last-child td{color:var(--txm);font-weight:400}
+.lt{color:var(--li);font-weight:600}
+.gt{color:var(--gg);font-weight:600}
+.bge{display:inline-block;font-size:10px;font-weight:600;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.b-g{background:var(--gbg);color:var(--green);border:1px solid var(--gbr)}
+.b-y{background:var(--abg);color:var(--amber);border:1px solid var(--abr)}
+.b-r{background:var(--rbg);color:var(--red);border:1px solid var(--rbr)}
+.b-b{background:var(--bbg);color:var(--blue);border:1px solid var(--bbr)}
+.b-n{background:var(--surface-3);color:var(--txm);border:1px solid var(--border)}
+/* SVG charts */
+.svgwrap{width:100%;overflow:hidden;margin:8px 0}
+.svgwrap svg{display:block;width:100%}
+.leg{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.li2{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--tx2)}
+.lsq{width:10px;height:10px;border-radius:2px;display:inline-block}
+.tp{display:none}
+.tp.on{display:flex;flex-direction:column;gap:1.25rem}
+.sc-cur{background:var(--cassava-light)!important;font-weight:600}
+.af input[type=number]{width:85px;padding:4px 6px;border:1px solid var(--border);border-radius:5px;font-size:12px;font-family:inherit;background:var(--surface);outline:none}
+.af input[type=number]:focus{border-color:var(--cacao)}
+.sbtn{background:var(--cacao);color:#fff;border:none;padding:7px 18px;border-radius:6px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit}
+.sbtn:hover{opacity:.85}
+.smsg{font-size:12px;margin-left:10px;display:none}
+.vp{color:var(--green);font-weight:600}
+.vn{color:var(--red);font-weight:600}
+.tenx{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--amber);border-radius:var(--r);padding:12px 15px;font-size:12px;line-height:1.7;color:var(--tx2)}
+.tenx strong{color:var(--tx)}
+@media(max-width:900px){
+  .lay{grid-template-columns:1fr}
+  .sb{position:static;height:auto}
+  .mst{position:static}
+  .mg{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
 <body>
-
 <header>
-  <div class="header-left">
-    <div class="logo-mark">AZ</div>
-    <span class="header-title">AP Inbox — Ad Model</span>
-    <span class="header-sub">Commercial · FY27</span>
+  <div class="hl">
+    <div class="lm">AZ</div>
+    <span class="ht">AP Inbox — Ad Model</span>
+    <span class="hs">Commercial · FY27</span>
   </div>
-  <div class="header-tabs">
-    <button class="tab-btn active" onclick="switchTab(&#39;plan&#39;,this)">Plan</button>
-    <button class="tab-btn" onclick="switchTab(&#39;actuals&#39;,this)">Actuals</button>
-    <button class="tab-btn" onclick="switchTab(&#39;vs&#39;,this)">Plan vs. Actual</button>
+  <div class="tabs">
+    <button class="tb on" onclick="sw(&#39;plan&#39;,this)">Plan</button>
+    <button class="tb" onclick="sw(&#39;actuals&#39;,this)">Actuals</button>
+    <button class="tb" onclick="sw(&#39;vs&#39;,this)">Plan vs. Actual</button>
   </div>
-  <span class="fy-badge">FY27</span>
+  <span class="fyb">FY27</span>
 </header>
 
-<div class="layout">
-
-<aside class="sidebar">
-
+<div class="lay">
+<aside class="sb">
   <div class="card">
-    <div class="card-header">
-      <div class="channel-dot" style="background:var(--li-blue)"></div>
-      <h3>LinkedIn</h3>
-      <span style="font-size:11px;color:var(--text-muted);margin-left:auto">All months</span>
-    </div>
-    <div class="card-body">
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">Pipeline ratio</span><span class="slider-val" id="liR-out">$10:1</span></div><input type="range" id="liR" min="1" max="15" step="0.5" value="10"></div>
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">Jun spend</span><span class="slider-val" id="liJun-out">$5k</span></div><input type="range" id="liJun" min="0" max="10000" step="500" value="5000"></div>
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">Jul spend</span><span class="slider-val" id="liJul-out">$5k</span></div><input type="range" id="liJul" min="0" max="10000" step="500" value="5000"></div>
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">Aug–Oct / mo</span><span class="slider-val" id="liQ3-out">$7k/mo</span></div><input type="range" id="liQ3" min="0" max="15000" step="500" value="7000"></div>
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">Nov–Jan / mo</span><span class="slider-val" id="liQ4-out">$12k/mo</span></div><input type="range" id="liQ4" min="0" max="20000" step="500" value="12000"></div>
+    <div class="ch"><div class="cd" style="background:var(--li)"></div><h3>LinkedIn</h3><span style="font-size:11px;color:var(--txm);margin-left:auto">All months</span></div>
+    <div class="cb">
+      <div class="sg"><div class="sr"><span class="sl">Pipeline ratio</span><span class="sv" id="liR-o">$10:1</span></div><input type="range" id="liR" min="1" max="15" step=".5" value="10"></div>
+      <div class="sg"><div class="sr"><span class="sl">Jun spend</span><span class="sv" id="liJun-o">$5k</span></div><input type="range" id="liJun" min="0" max="10000" step="500" value="5000"></div>
+      <div class="sg"><div class="sr"><span class="sl">Jul spend</span><span class="sv" id="liJul-o">$5k</span></div><input type="range" id="liJul" min="0" max="10000" step="500" value="5000"></div>
+      <div class="sg"><div class="sr"><span class="sl">Aug–Oct / mo</span><span class="sv" id="liQ3-o">$7k/mo</span></div><input type="range" id="liQ3" min="0" max="15000" step="500" value="7000"></div>
+      <div class="sg"><div class="sr"><span class="sl">Nov–Jan / mo</span><span class="sv" id="liQ4-o">$12k/mo</span></div><input type="range" id="liQ4" min="0" max="20000" step="500" value="12000"></div>
     </div>
   </div>
-
   <div class="card">
-    <div class="card-header">
-      <div class="channel-dot" style="background:var(--g-red)"></div>
-      <h3>Google intent</h3>
-      <span style="font-size:11px;color:var(--text-muted);margin-left:auto">Test — Aug onward</span>
-    </div>
-    <div class="card-body">
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">Pipeline ratio</span><span class="slider-val" id="gR-out">$8:1</span></div><input type="range" id="gR" min="2" max="15" step="0.5" value="8"></div>
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">Aug–Oct / mo</span><span class="slider-val" id="gQ3-out">$3k/mo</span></div><input type="range" id="gQ3" min="0" max="15000" step="500" value="2500"></div>
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">Nov–Jan / mo</span><span class="slider-val" id="gQ4-out">$5k/mo</span></div><input type="range" id="gQ4" min="0" max="20000" step="500" value="5000"></div>
-      <div class="divider"></div>
-      <div><div class="ratio-bar" id="ratio-bar"><div class="ratio-li" style="width:75%">LI 10:1</div><div class="ratio-g" style="width:25%">G 8:1</div></div><div class="ratio-meta" id="ratio-meta"><strong>Blended 9.5:1</strong> &nbsp;·&nbsp; LI 75% · G 25%</div></div>
+    <div class="ch"><div class="cd" style="background:var(--gg)"></div><h3>Google intent</h3><span style="font-size:11px;color:var(--txm);margin-left:auto">Test — Aug onward</span></div>
+    <div class="cb">
+      <div class="sg"><div class="sr"><span class="sl">Pipeline ratio</span><span class="sv" id="gR-o">$8:1</span></div><input type="range" id="gR" min="2" max="15" step=".5" value="8"></div>
+      <div class="sg"><div class="sr"><span class="sl">Aug–Oct / mo</span><span class="sv" id="gQ3-o">$3k/mo</span></div><input type="range" id="gQ3" min="0" max="15000" step="500" value="2500"></div>
+      <div class="sg"><div class="sr"><span class="sl">Nov–Jan / mo</span><span class="sv" id="gQ4-o">$5k/mo</span></div><input type="range" id="gQ4" min="0" max="20000" step="500" value="5000"></div>
+      <div class="dv"></div>
+      <div><div class="rb" id="rbar"><div class="rli" style="width:75%">LI 10:1</div><div class="rgg" style="width:25%">G 8:1</div></div><div class="rm" id="rmeta"><strong>Blended 9.5:1</strong> &nbsp;·&nbsp; LI 75% · G 25%</div></div>
     </div>
   </div>
-
   <div class="card">
-    <div class="card-header"><h3>Funnel</h3></div>
-    <div class="card-body">
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">MQL → S2 (days)</span><span class="slider-val" id="MD-out">30d</span></div><input type="range" id="MD" min="1" max="60" step="1" value="30"></div>
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">S2 → close (days)</span><span class="slider-val" id="OD-out">60d</span></div><input type="range" id="OD" min="30" max="120" step="15" value="60"></div>
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">MQL → S2 rate</span><span class="slider-val" id="MR-out">20%</span></div><input type="range" id="MR" min="5" max="50" step="1" value="20"></div>
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">S2 → close rate</span><span class="slider-val" id="CR-out">25%</span></div><input type="range" id="CR" min="5" max="50" step="1" value="25"></div>
+    <div class="ch"><h3>Funnel</h3></div>
+    <div class="cb">
+      <div class="sg"><div class="sr"><span class="sl">MQL → S2 (days)</span><span class="sv" id="MD-o">30d</span></div><input type="range" id="MD" min="1" max="60" step="1" value="30"></div>
+      <div class="sg"><div class="sr"><span class="sl">S2 → close (days)</span><span class="sv" id="OD-o">60d</span></div><input type="range" id="OD" min="30" max="120" step="15" value="60"></div>
+      <div class="sg"><div class="sr"><span class="sl">MQL → S2 rate</span><span class="sv" id="MR-o">20%</span></div><input type="range" id="MR" min="5" max="50" step="1" value="20"></div>
+      <div class="sg"><div class="sr"><span class="sl">S2 → close rate</span><span class="sv" id="CR-o">25%</span></div><input type="range" id="CR" min="5" max="50" step="1" value="25"></div>
     </div>
   </div>
-
   <div class="card">
-    <div class="card-header"><h3>Targets</h3></div>
-    <div class="card-body">
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">ACV</span><span class="slider-val" id="ACV-out">$50k</span></div><input type="range" id="ACV" min="25000" max="150000" step="5000" value="50000"></div>
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">Annual pipeline target</span><span class="slider-val" id="T-out">$900k</span></div><input type="range" id="T" min="500000" max="2000000" step="50000" value="900000"></div>
-      <div class="slider-group"><div class="slider-row"><span class="slider-lbl">Ads share of target</span><span class="slider-val" id="AS-out">25%</span></div><input type="range" id="AS" min="10" max="50" step="5" value="25"></div>
+    <div class="ch"><h3>Targets</h3></div>
+    <div class="cb">
+      <div class="sg"><div class="sr"><span class="sl">ACV</span><span class="sv" id="ACV-o">$50k</span></div><input type="range" id="ACV" min="25000" max="150000" step="5000" value="50000"></div>
+      <div class="sg"><div class="sr"><span class="sl">Annual pipeline target</span><span class="sv" id="T-o">$900k</span></div><input type="range" id="T" min="500000" max="2000000" step="50000" value="900000"></div>
+      <div class="sg"><div class="sr"><span class="sl">Ads share of target</span><span class="sv" id="AS-o">25%</span></div><input type="range" id="AS" min="10" max="50" step="5" value="25"></div>
     </div>
   </div>
-
 </aside>
 
-<main class="main">
-
-  <div class="metrics-sticky">
-    <div class="metrics-grid">
-      <div class="metric"><div class="mval" id="m-target">$225k</div><div class="mlbl">Ads target (FY27)</div></div>
-      <div class="metric"><div class="mval" id="m-spend27">$39k</div><div class="mlbl">Plan FY27 spend</div></div>
-      <div class="metric"><div class="mval" id="m-pipe27">$370k</div><div class="mlbl">Plan FY27 pipeline</div></div>
-      <div class="metric"><div class="mval" id="m-blended">9.5:1</div><div class="mlbl">Blended ratio</div></div>
-      <div class="metric hi"><div class="mval" id="m-deals">0.4</div><div class="mlbl">Plan FY27 deals</div></div>
-      <div class="metric hi"><div class="mval" id="m-rev">$19k</div><div class="mlbl">Plan FY27 revenue</div></div>
-      <div class="metric"><div class="mval" id="m-cpd">$104k</div><div class="mlbl">Cost per deal won</div></div>
-      <div class="metric"><div class="mval" id="m-arev">$0</div><div class="mlbl">Actual revenue to date</div></div>
+<main class="mn">
+  <div class="mst">
+    <div class="mg">
+      <div class="mc"><div class="mv" id="m0">$225k</div><div class="ml">Ads target (FY27)</div></div>
+      <div class="mc"><div class="mv" id="m1">$39k</div><div class="ml">Plan FY27 spend</div></div>
+      <div class="mc"><div class="mv" id="m2">$370k</div><div class="ml">Plan FY27 pipeline</div></div>
+      <div class="mc"><div class="mv" id="m3">9.5:1</div><div class="ml">Blended ratio</div></div>
+      <div class="mc hi"><div class="mv" id="m4">0.4</div><div class="ml">Plan FY27 deals</div></div>
+      <div class="mc hi"><div class="mv" id="m5">$19k</div><div class="ml">Plan FY27 revenue</div></div>
+      <div class="mc"><div class="mv" id="m6">$104k</div><div class="ml">Cost per deal won</div></div>
+      <div class="mc"><div class="mv" id="m7">$0</div><div class="ml">Actual revenue to date</div></div>
     </div>
-    <div class="bench-bar">
-      <span><strong style="color:var(--text-primary)">Decision campaign benchmarks</strong></span>
+    <div class="bb2">
+      <span><strong style="color:var(--tx)">Decision benchmarks</strong></span>
       <span>CPL <strong>$250–350</strong></span>
       <span>Cost/S2 <strong>$3k–8k</strong></span>
-      <span>Pipeline ratio <strong>8–12x</strong></span>
-      <span style="color:var(--amber)">TOFU (Gartner): $100–175 CPL · $15k–25k/S2 · judge on nurture</span>
+      <span>Ratio <strong>8–12x</strong></span>
+      <span style="color:var(--amber)">TOFU (Gartner): $100–175 CPL · judge on nurture</span>
     </div>
-    <div id="alert-ok" class="alert alert-ok"></div>
-    <div id="alert-warn" class="alert alert-warn show">⚠ Plan generates $19k vs. $225k — gap $207k. At 90d cycle, 5/8 months close by Jan 31.</div>
+    <div id="aok" class="al al-ok"></div>
+    <div id="awk" class="al al-w on">⚠ Plan generates $19k vs. $225k — gap $207k. At 90d cycle, 5/8 months close by Jan 31.</div>
   </div>
 
   <!-- PLAN TAB -->
-  <div id="tab-plan" class="tab-panel active">
+  <div id="tab-plan" class="tp on">
     <div class="card">
-      <div class="card-header"><h3>Monthly plan — FY27 closes highlighted</h3></div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Month</th><th><span class="li-tag">LI</span> spend</th><th><span class="g-tag">G</span> spend</th><th>Total</th><th>Pipeline</th><th>MQLs</th><th>S2 opps</th><th>Deals won</th><th>Revenue</th><th>Closes</th><th>FY27?</th></tr></thead>
-          <tbody id="plan-body"><tr class="">
+      <div class="ch"><h3>Monthly plan</h3></div>
+      <div class="tw"><table>
+        <thead><tr><th>Month</th><th><span class="lt">LI</span> spend</th><th><span class="gt">G</span> spend</th><th>Total</th><th>Pipeline</th><th>MQLs</th><th>S2 opps</th><th>Deals won</th><th>Revenue</th><th>Closes</th><th>FY27?</th></tr></thead>
+        <tbody id="pb"><tr class="">
       <td><strong>Jun</strong></td><td>$5k</td><td>—</td><td>$5k</td>
       <td>$50k</td><td>1</td>
       <td>0.2</td>
       <td>0.05</td>
       <td>$3k</td>
-      <td style="font-size:11px;color:var(--text-muted)">Sep</td><td><span class="badge bg">FY27 ✓</span></td>
+      <td style="font-size:11px;color:var(--txm)">Sep</td><td><span class="bge b-g">FY27 ✓</span></td>
     </tr><tr class="">
       <td><strong>Jul</strong></td><td>$5k</td><td>—</td><td>$5k</td>
       <td>$50k</td><td>1</td>
       <td>0.2</td>
       <td>0.05</td>
       <td>$3k</td>
-      <td style="font-size:11px;color:var(--text-muted)">Oct</td><td><span class="badge bg">FY27 ✓</span></td>
+      <td style="font-size:11px;color:var(--txm)">Oct</td><td><span class="bge b-g">FY27 ✓</span></td>
     </tr><tr class="">
       <td><strong>Aug</strong></td><td>$7k</td><td>$3k</td><td>$10k</td>
       <td>$90k</td><td>2</td>
       <td>0.4</td>
       <td>0.09</td>
       <td>$5k</td>
-      <td style="font-size:11px;color:var(--text-muted)">Nov</td><td><span class="badge bg">FY27 ✓</span></td>
+      <td style="font-size:11px;color:var(--txm)">Nov</td><td><span class="bge b-g">FY27 ✓</span></td>
     </tr><tr class="">
       <td><strong>Sep</strong></td><td>$7k</td><td>$3k</td><td>$10k</td>
       <td>$90k</td><td>2</td>
       <td>0.4</td>
       <td>0.09</td>
       <td>$5k</td>
-      <td style="font-size:11px;color:var(--text-muted)">Dec</td><td><span class="badge bg">FY27 ✓</span></td>
+      <td style="font-size:11px;color:var(--txm)">Dec</td><td><span class="bge b-g">FY27 ✓</span></td>
     </tr><tr class="">
       <td><strong>Oct</strong></td><td>$7k</td><td>$3k</td><td>$10k</td>
       <td>$90k</td><td>2</td>
       <td>0.4</td>
       <td>0.09</td>
       <td>$5k</td>
-      <td style="font-size:11px;color:var(--text-muted)">Jan</td><td><span class="badge bg">FY27 ✓</span></td>
-    </tr><tr class="fy28">
+      <td style="font-size:11px;color:var(--txm)">Jan</td><td><span class="bge b-g">FY27 ✓</span></td>
+    </tr><tr class="f8">
       <td><strong>Nov</strong></td><td>$12k</td><td>$5k</td><td>$17k</td>
       <td>$160k</td><td>3</td>
       <td>0.6</td>
       <td>—</td>
       <td>—</td>
-      <td style="font-size:11px;color:var(--text-muted)">Feb (FY28)</td><td><span class="badge bb">FY28 →</span></td>
-    </tr><tr class="fy28">
+      <td style="font-size:11px;color:var(--txm)">Feb (FY28)</td><td><span class="bge b-b">FY28 →</span></td>
+    </tr><tr class="f8">
       <td><strong>Dec</strong></td><td>$12k</td><td>$5k</td><td>$17k</td>
       <td>$160k</td><td>3</td>
       <td>0.6</td>
       <td>—</td>
       <td>—</td>
-      <td style="font-size:11px;color:var(--text-muted)">Mar (FY28)</td><td><span class="badge bb">FY28 →</span></td>
-    </tr><tr class="fy28">
+      <td style="font-size:11px;color:var(--txm)">Mar (FY28)</td><td><span class="bge b-b">FY28 →</span></td>
+    </tr><tr class="f8">
       <td><strong>Jan</strong></td><td>$12k</td><td>$5k</td><td>$17k</td>
       <td>$160k</td><td>3</td>
       <td>0.6</td>
       <td>—</td>
       <td>—</td>
-      <td style="font-size:11px;color:var(--text-muted)">Apr (FY28)</td><td><span class="badge bb">FY28 →</span></td>
-    </tr></tbody>
-          <tfoot id="plan-foot">
-    <tr><td>FY27 total</td><td colspan="2">$39k</td><td>$39k</td><td>$370k</td>
-    <td>7</td><td>1</td>
-    <td>0.4</td><td>$19k</td><td colspan="2"></td></tr>
-    <tr><td>All 8 mo</td><td colspan="2">$90k</td><td>$90k</td><td>$850k</td>
-    <td>17</td><td>3</td>
-    <td>0.9</td><td>$43k</td><td colspan="2"></td></tr></tfoot>
-        </table>
-      </div>
+      <td style="font-size:11px;color:var(--txm)">Apr (FY28)</td><td><span class="bge b-b">FY28 →</span></td>
+    </tr></tbody><tfoot id="pf">
+    <tr><td>FY27</td><td colspan="2">$39k</td><td>$39k</td><td>$370k</td><td>7</td><td>1</td><td>0.4</td><td>$19k</td><td colspan="2"></td></tr>
+    <tr><td>All 8mo</td><td colspan="2">$90k</td><td>$90k</td><td>$850k</td><td>17</td><td>3</td><td>0.9</td><td>$43k</td><td colspan="2"></td></tr></tfoot>
+      </table></div>
     </div>
     <div class="card">
-      <div class="card-header"><h3>Pipeline by month &amp; channel</h3></div>
-      <div style="padding:14px 16px">
-        <div class="chart-leg">
-          <div class="leg-item"><div class="leg-sq" style="background:var(--li-blue)"></div>LinkedIn (FY27)</div>
-          <div class="leg-item"><div class="leg-sq" style="background:var(--g-red)"></div>Google (FY27)</div>
-          <div class="leg-item"><div class="leg-sq" style="background:#C8C8C0"></div>FY28 pipeline</div>
-          <div class="leg-item"><div class="leg-sq" style="background:var(--cassava);height:3px;border-radius:0;align-self:center"></div>Pace target</div>
+      <div class="ch"><h3>Pipeline by month &amp; channel</h3></div>
+      <div style="padding:13px 15px">
+        <div class="leg">
+          <div class="li2"><div class="lsq" style="background:#0A66C2"></div>LinkedIn (FY27)</div>
+          <div class="li2"><div class="lsq" style="background:#EA4335"></div>Google (FY27)</div>
+          <div class="li2"><div class="lsq" style="background:#C8C8C0"></div>FY28 pipeline</div>
+          <div class="li2"><div class="lsq" style="background:var(--cassava);height:3px;border-radius:0;align-self:center"></div>Pace</div>
         </div>
-        <div class="chart-wrap"><canvas id="plan-chart" width="1600" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 800px;"></canvas></div>
+        <div class="svgwrap" id="plan-chart-wrap"><svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif"><line x1="48" y1="10" x2="790" y2="10" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="50.5" x2="790" y2="50.5" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="91" x2="790" y2="91" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="131.5" x2="790" y2="131.5" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="172" x2="790" y2="172" stroke="#E4E4DE" stroke-width="1"></line><text x="43" y="14" text-anchor="end" font-size="9" fill="#9B9B94">$160k</text><text x="43" y="54.5" text-anchor="end" font-size="9" fill="#9B9B94">$120k</text><text x="43" y="95" text-anchor="end" font-size="9" fill="#9B9B94">$80k</text><text x="43" y="135.5" text-anchor="end" font-size="9" fill="#9B9B94">$40k</text><text x="43" y="176" text-anchor="end" font-size="9" fill="#9B9B94">0.00</text><rect x="62.875" y="121.375" width="21" height="50.625" fill="#0A66C2" rx="2"></rect><rect x="155.625" y="121.375" width="21" height="50.625" fill="#0A66C2" rx="2"></rect><rect x="248.375" y="101.125" width="21" height="70.875" fill="#0A66C2" rx="2"></rect><rect x="341.125" y="101.125" width="21" height="70.875" fill="#0A66C2" rx="2"></rect><rect x="433.875" y="101.125" width="21" height="70.875" fill="#0A66C2" rx="2"></rect><rect x="269.375" y="151.75" width="21" height="20.25" fill="#EA4335" rx="2"></rect><rect x="362.125" y="151.75" width="21" height="20.25" fill="#EA4335" rx="2"></rect><rect x="454.875" y="151.75" width="21" height="20.25" fill="#EA4335" rx="2"></rect><rect x="568.625" y="10" width="21" height="162" fill="#C8C8C0" rx="2"></rect><rect x="661.375" y="10" width="21" height="162" fill="#C8C8C0" rx="2"></rect><rect x="754.125" y="10" width="21" height="162" fill="#C8C8C0" rx="2"></rect><path d="M94.375,10L187.125,10L279.875,10L372.625,10L465.375,10" fill="none" stroke="#F5C842" stroke-width="2" stroke-dasharray="5,4"></path><circle cx="94.375" cy="10" r="3" fill="#F5C842"></circle><circle cx="187.125" cy="10" r="3" fill="#F5C842"></circle><circle cx="279.875" cy="10" r="3" fill="#F5C842"></circle><circle cx="372.625" cy="10" r="3" fill="#F5C842"></circle><circle cx="465.375" cy="10" r="3" fill="#F5C842"></circle><text x="94.375" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jun</text><text x="187.125" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jul</text><text x="279.875" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Aug</text><text x="372.625" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Sep</text><text x="465.375" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Oct</text><text x="558.125" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Nov</text><text x="650.875" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Dec</text><text x="743.625" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jan</text></svg></div>
       </div>
     </div>
     <div class="card">
-      <div class="card-header"><h3>Close rate sensitivity — FY27 vs. ads target</h3></div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>MQL→S2</th><th>S2→Close</th><th>Overall</th><th>FY27 MQLs</th><th>FY27 deals</th><th>FY27 revenue</th><th>vs. target</th></tr></thead>
-          <tbody id="sens-body"><tr><td>10%</td><td>15%</td>
-      <td>2%</td><td>7</td>
-      <td>0.1</td><td>$6k</td>
-      <td><span class="badge bgr">2% of target</span></td></tr><tr><td>10%</td><td>20%</td>
-      <td>2%</td><td>7</td>
-      <td>0.1</td><td>$7k</td>
-      <td><span class="badge bgr">3% of target</span></td></tr><tr><td>10%</td><td>25%</td>
-      <td>3%</td><td>7</td>
-      <td>0.2</td><td>$9k</td>
-      <td><span class="badge bgr">4% of target</span></td></tr><tr><td>10%</td><td>30%</td>
-      <td>3%</td><td>7</td>
-      <td>0.2</td><td>$11k</td>
-      <td><span class="badge bgr">5% of target</span></td></tr><tr><td>15%</td><td>15%</td>
-      <td>2%</td><td>7</td>
-      <td>0.2</td><td>$8k</td>
-      <td><span class="badge bgr">4% of target</span></td></tr><tr><td>15%</td><td>20%</td>
-      <td>3%</td><td>7</td>
-      <td>0.2</td><td>$11k</td>
-      <td><span class="badge bgr">5% of target</span></td></tr><tr><td>15%</td><td>25%</td>
-      <td>4%</td><td>7</td>
-      <td>0.3</td><td>$14k</td>
-      <td><span class="badge bgr">6% of target</span></td></tr><tr><td>15%</td><td>30%</td>
-      <td>5%</td><td>7</td>
-      <td>0.3</td><td>$17k</td>
-      <td><span class="badge bgr">7% of target</span></td></tr><tr><td>20%</td><td>15%</td>
-      <td>3%</td><td>7</td>
-      <td>0.2</td><td>$11k</td>
-      <td><span class="badge bgr">5% of target</span></td></tr><tr><td>20%</td><td>20%</td>
-      <td>4%</td><td>7</td>
-      <td>0.3</td><td>$15k</td>
-      <td><span class="badge bgr">7% of target</span></td></tr><tr class="sens-cur"><td>20%</td><td>25%</td>
-      <td>5%</td><td>7</td>
-      <td>0.4</td><td>$19k</td>
-      <td><span class="badge bgr">8% of target</span></td></tr><tr><td>20%</td><td>30%</td>
-      <td>6%</td><td>7</td>
-      <td>0.4</td><td>$22k</td>
-      <td><span class="badge bgr">10% of target</span></td></tr><tr><td>25%</td><td>15%</td>
-      <td>4%</td><td>7</td>
-      <td>0.3</td><td>$14k</td>
-      <td><span class="badge bgr">6% of target</span></td></tr><tr><td>25%</td><td>20%</td>
-      <td>5%</td><td>7</td>
-      <td>0.4</td><td>$19k</td>
-      <td><span class="badge bgr">8% of target</span></td></tr><tr><td>25%</td><td>25%</td>
-      <td>6%</td><td>7</td>
-      <td>0.5</td><td>$23k</td>
-      <td><span class="badge bgr">10% of target</span></td></tr><tr><td>25%</td><td>30%</td>
-      <td>8%</td><td>7</td>
-      <td>0.6</td><td>$28k</td>
-      <td><span class="badge bgr">12% of target</span></td></tr><tr><td>30%</td><td>15%</td>
-      <td>5%</td><td>7</td>
-      <td>0.3</td><td>$17k</td>
-      <td><span class="badge bgr">7% of target</span></td></tr><tr><td>30%</td><td>20%</td>
-      <td>6%</td><td>7</td>
-      <td>0.4</td><td>$22k</td>
-      <td><span class="badge bgr">10% of target</span></td></tr><tr><td>30%</td><td>25%</td>
-      <td>8%</td><td>7</td>
-      <td>0.6</td><td>$28k</td>
-      <td><span class="badge bgr">12% of target</span></td></tr><tr><td>30%</td><td>30%</td>
-      <td>9%</td><td>7</td>
-      <td>0.7</td><td>$33k</td>
-      <td><span class="badge bgr">15% of target</span></td></tr></tbody>
-        </table>
-      </div>
+      <div class="ch"><h3>Close rate sensitivity</h3></div>
+      <div class="tw"><table>
+        <thead><tr><th>MQL→S2</th><th>S2→Close</th><th>Overall</th><th>FY27 MQLs</th><th>FY27 deals</th><th>FY27 revenue</th><th>vs. target</th></tr></thead>
+        <tbody id="sb2"><tr><td>10%</td><td>15%</td><td>2%</td><td>7</td><td>0.1</td><td>$6k</td><td><span class="bge b-n">2% of target</span></td></tr><tr><td>10%</td><td>20%</td><td>2%</td><td>7</td><td>0.1</td><td>$7k</td><td><span class="bge b-n">3% of target</span></td></tr><tr><td>10%</td><td>25%</td><td>3%</td><td>7</td><td>0.2</td><td>$9k</td><td><span class="bge b-n">4% of target</span></td></tr><tr><td>10%</td><td>30%</td><td>3%</td><td>7</td><td>0.2</td><td>$11k</td><td><span class="bge b-n">5% of target</span></td></tr><tr><td>15%</td><td>15%</td><td>2%</td><td>7</td><td>0.2</td><td>$8k</td><td><span class="bge b-n">4% of target</span></td></tr><tr><td>15%</td><td>20%</td><td>3%</td><td>7</td><td>0.2</td><td>$11k</td><td><span class="bge b-n">5% of target</span></td></tr><tr><td>15%</td><td>25%</td><td>4%</td><td>7</td><td>0.3</td><td>$14k</td><td><span class="bge b-n">6% of target</span></td></tr><tr><td>15%</td><td>30%</td><td>5%</td><td>7</td><td>0.3</td><td>$17k</td><td><span class="bge b-n">7% of target</span></td></tr><tr><td>20%</td><td>15%</td><td>3%</td><td>7</td><td>0.2</td><td>$11k</td><td><span class="bge b-n">5% of target</span></td></tr><tr><td>20%</td><td>20%</td><td>4%</td><td>7</td><td>0.3</td><td>$15k</td><td><span class="bge b-n">7% of target</span></td></tr><tr class="sc-cur"><td>20%</td><td>25%</td><td>5%</td><td>7</td><td>0.4</td><td>$19k</td><td><span class="bge b-n">8% of target</span></td></tr><tr><td>20%</td><td>30%</td><td>6%</td><td>7</td><td>0.4</td><td>$22k</td><td><span class="bge b-n">10% of target</span></td></tr><tr><td>25%</td><td>15%</td><td>4%</td><td>7</td><td>0.3</td><td>$14k</td><td><span class="bge b-n">6% of target</span></td></tr><tr><td>25%</td><td>20%</td><td>5%</td><td>7</td><td>0.4</td><td>$19k</td><td><span class="bge b-n">8% of target</span></td></tr><tr><td>25%</td><td>25%</td><td>6%</td><td>7</td><td>0.5</td><td>$23k</td><td><span class="bge b-n">10% of target</span></td></tr><tr><td>25%</td><td>30%</td><td>8%</td><td>7</td><td>0.6</td><td>$28k</td><td><span class="bge b-n">12% of target</span></td></tr><tr><td>30%</td><td>15%</td><td>5%</td><td>7</td><td>0.3</td><td>$17k</td><td><span class="bge b-n">7% of target</span></td></tr><tr><td>30%</td><td>20%</td><td>6%</td><td>7</td><td>0.4</td><td>$22k</td><td><span class="bge b-n">10% of target</span></td></tr><tr><td>30%</td><td>25%</td><td>8%</td><td>7</td><td>0.6</td><td>$28k</td><td><span class="bge b-n">12% of target</span></td></tr><tr><td>30%</td><td>30%</td><td>9%</td><td>7</td><td>0.7</td><td>$33k</td><td><span class="bge b-n">15% of target</span></td></tr></tbody>
+      </table></div>
     </div>
     <div class="card">
-      <div class="card-header"><h3>10:1 reality check</h3></div>
-      <div style="padding:14px 16px"><div class="tenx" id="tenx-box"><strong>This model tracks sourced S2 pipeline only</strong> — new S2 when a qualified meeting happens with a real buyer. No influenced pipeline.<br><br>At $90k total spend, 10:1 sourced = <strong>$895k in S2 pipeline</strong> — 99% of your <strong>$900k</strong> company target. That breaks the math.<br><br><strong>10:1 is an influenced number.</strong> Decision campaign sourced ceiling: 8–12:1. Blended today: <strong>9.5:1</strong>.</div></div>
+      <div class="ch"><h3>10:1 reality check</h3></div>
+      <div style="padding:13px 15px"><div class="tenx" id="tenx"><strong>This model tracks sourced S2 pipeline only</strong> — new S2 when a qualified meeting happens with a real buyer. No influenced pipeline.<br><br>At $90k total spend, 10:1 sourced = <strong>$895k in S2 pipeline</strong> — 99% of your <strong>$900k</strong> company target. That breaks the math.<br><br><strong>10:1 is an influenced number.</strong> Decision campaign sourced ceiling: 8–12:1. Blended today: <strong>9.5:1</strong>.</div></div>
     </div>
   </div>
 
   <!-- ACTUALS TAB -->
-  <div id="tab-actuals" class="tab-panel">
+  <div id="tab-actuals" class="tp">
     <div class="card">
-      <div class="card-header"><h3>S2 opps — plan vs. actual per month</h3><span style="font-size:11px;color:var(--text-muted);margin-left:auto">Enter actuals below to populate</span></div>
-      <div style="padding:14px 16px">
-        <div class="chart-leg">
-          <div class="leg-item"><div class="leg-sq" style="background:#F5C84280;border:1px solid var(--cassava)"></div>S2 plan</div>
-          <div class="leg-item"><div class="leg-sq" style="background:var(--cacao)"></div>S2 actual</div>
-          <div class="leg-item"><div class="leg-sq" style="background:#BBF7D0;height:3px;border-radius:0;align-self:center"></div>Cumulative plan</div>
-          <div class="leg-item"><div class="leg-sq" style="background:var(--green);height:3px;border-radius:0;align-self:center"></div>Cumulative actual</div>
+      <div class="ch"><h3>S2 opps — plan vs. actual</h3><span style="font-size:11px;color:var(--txm);margin-left:auto">Enter actuals below to populate</span></div>
+      <div style="padding:13px 15px">
+        <div class="leg">
+          <div class="li2"><div class="lsq" style="background:#F5C84260;border:1px solid #F5C842"></div>S2 plan</div>
+          <div class="li2"><div class="lsq" style="background:#1a1a1a"></div>S2 actual</div>
+          <div class="li2"><div class="lsq" style="background:#BBF7D0;height:3px;border-radius:0;align-self:center"></div>Cum. plan</div>
+          <div class="li2"><div class="lsq" style="background:var(--green);height:3px;border-radius:0;align-self:center"></div>Cum. actual</div>
         </div>
-        <div class="chart-wrap"><canvas id="s2-chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
-        <div id="s2-summary" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;flex:1;min-width:110px">
-    <div style="font-size:18px;font-weight:700;color:var(--red)">0</div>
-    <div style="font-size:11px;color:var(--text-muted)">Actual S2s to date</div></div><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;flex:1;min-width:110px">
-    <div style="font-size:18px;font-weight:700;color:var(--text-primary)">3.4</div>
-    <div style="font-size:11px;color:var(--text-muted)">Plan S2s (8 months)</div></div><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;flex:1;min-width:110px">
-    <div style="font-size:18px;font-weight:700;color:var(--red)">0%</div>
-    <div style="font-size:11px;color:var(--text-muted)">of plan achieved</div></div><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;flex:1;min-width:110px">
-    <div style="font-size:18px;font-weight:700;color:var(--amber)">3.4</div>
-    <div style="font-size:11px;color:var(--text-muted)">S2s remaining</div></div></div>
+        <div class="svgwrap" id="s2-chart-wrap"><svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif"><line x1="48" y1="10" x2="752" y2="10" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="50.5" x2="752" y2="50.5" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="91" x2="752" y2="91" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="131.5" x2="752" y2="131.5" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="172" x2="752" y2="172" stroke="#E4E4DE" stroke-width="1"></line><text x="43" y="14" text-anchor="end" font-size="9" fill="#9B9B94">0.64</text><text x="43" y="54.5" text-anchor="end" font-size="9" fill="#9B9B94">0.48</text><text x="43" y="95" text-anchor="end" font-size="9" fill="#9B9B94">0.32</text><text x="43" y="135.5" text-anchor="end" font-size="9" fill="#9B9B94">0.16</text><text x="43" y="176" text-anchor="end" font-size="9" fill="#9B9B94">0.00</text><text x="757" y="14" text-anchor="start" font-size="9" fill="#9B9B94">3</text><text x="757" y="54.5" text-anchor="start" font-size="9" fill="#9B9B94">3</text><text x="757" y="95" text-anchor="start" font-size="9" fill="#9B9B94">2</text><text x="757" y="135.5" text-anchor="start" font-size="9" fill="#9B9B94">0.8</text><text x="757" y="176" text-anchor="start" font-size="9" fill="#9B9B94">0.0</text><rect x="62" y="121.375" width="30" height="50.625" fill="#F5C84260" rx="2"></rect><rect x="150" y="121.375" width="30" height="50.625" fill="#F5C84260" rx="2"></rect><rect x="238" y="80.875" width="30" height="91.125" fill="#F5C84260" rx="2"></rect><rect x="326" y="80.875" width="30" height="91.125" fill="#F5C84260" rx="2"></rect><rect x="414" y="80.875" width="30" height="91.125" fill="#F5C84260" rx="2"></rect><rect x="502" y="10" width="30" height="162" fill="#F5C84260" rx="2"></rect><rect x="590" y="10" width="30" height="162" fill="#F5C84260" rx="2"></rect><rect x="678" y="10" width="30" height="162" fill="#F5C84260" rx="2"></rect><path d="M92,162.47058823529412L180,152.94117647058823L268,135.78823529411767L356,118.63529411764705L444,101.48235294117647L532,70.98823529411764L620,40.49411764705882L708,10" fill="none" stroke="#BBF7D0" stroke-width="2" stroke-dasharray=""></path><circle cx="92" cy="162.47058823529412" r="3" fill="#BBF7D0"></circle><circle cx="180" cy="152.94117647058823" r="3" fill="#BBF7D0"></circle><circle cx="268" cy="135.78823529411767" r="3" fill="#BBF7D0"></circle><circle cx="356" cy="118.63529411764705" r="3" fill="#BBF7D0"></circle><circle cx="444" cy="101.48235294117647" r="3" fill="#BBF7D0"></circle><circle cx="532" cy="70.98823529411764" r="3" fill="#BBF7D0"></circle><circle cx="620" cy="40.49411764705882" r="3" fill="#BBF7D0"></circle><circle cx="708" cy="10" r="3" fill="#BBF7D0"></circle><path d="M92,172" fill="none" stroke="#16A34A" stroke-width="2" stroke-dasharray=""></path><circle cx="92" cy="172" r="3" fill="#16A34A"></circle><text x="92" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jun</text><text x="180" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jul</text><text x="268" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Aug</text><text x="356" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Sep</text><text x="444" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Oct</text><text x="532" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Nov</text><text x="620" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Dec</text><text x="708" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jan</text></svg></div>
+        <div id="s2sum" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:9px 13px;flex:1;min-width:100px"><div style="font-size:18px;font-weight:700;color:var(--red)">0</div><div style="font-size:11px;color:var(--txm)">Actual S2s to date</div></div><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:9px 13px;flex:1;min-width:100px"><div style="font-size:18px;font-weight:700;color:var(--tx)">3.4</div><div style="font-size:11px;color:var(--txm)">Plan S2s (8 months)</div></div><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:9px 13px;flex:1;min-width:100px"><div style="font-size:18px;font-weight:700;color:var(--red)">0%</div><div style="font-size:11px;color:var(--txm)">of plan achieved</div></div><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:9px 13px;flex:1;min-width:100px"><div style="font-size:18px;font-weight:700;color:var(--amber)">3.4</div><div style="font-size:11px;color:var(--txm)">S2s remaining</div></div></div>
       </div>
     </div>
     <div class="card">
-      <div class="card-header"><h3>Enter actuals</h3><span style="font-size:11px;color:var(--text-muted);margin-left:auto">Salesforce sync coming Phase 2</span></div>
-      <div style="padding:14px 16px">
-        <p style="font-size:12px;color:var(--text-secondary);margin-bottom:14px">Enter what actually happened each month. June spend = $0, ads not yet live.</p>
-        <div class="table-wrap actuals-form">
-          <table>
-            <thead><tr><th>Month</th><th><span class="li-tag">LI</span> spend</th><th><span class="g-tag">G</span> spend</th><th>MQLs</th><th>S2 opps</th><th>Deals won</th><th>Revenue</th></tr></thead>
-            <tbody id="actuals-form-body"><tr style="background:var(--amber-bg)">
-        <td><strong>Jun</strong><br><span style="font-size:10px;color:var(--amber)">Not live</span></td>
+      <div class="ch"><h3>Enter actuals</h3><span style="font-size:11px;color:var(--txm);margin-left:auto">Salesforce sync — Phase 2</span></div>
+      <div style="padding:13px 15px">
+        <p style="font-size:12px;color:var(--tx2);margin-bottom:12px">Enter actuals each month. June = $0, not yet live.</p>
+        <div class="tw af"><table>
+          <thead><tr><th>Month</th><th><span class="lt">LI</span> spend</th><th><span class="gt">G</span> spend</th><th>MQLs</th><th>S2 opps</th><th>Deals won</th><th>Revenue</th></tr></thead>
+          <tbody id="afb"><tr style="background:var(--abg)"><td><strong>Jun</strong><br><span style="font-size:10px;color:var(--amber)">Not live</span></td>
         <td><input type="number" id="a-li-0" value="0" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-g-0" value="0" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-mql-0" value="0" placeholder="—" min="0"></td>
         <td><input type="number" id="a-s2-0" value="0" placeholder="—" min="0"></td>
-        <td><input type="number" id="a-won-0" value="0" placeholder="—" min="0" step="0.1"></td>
+        <td><input type="number" id="a-won-0" value="0" placeholder="—" min="0" step=".1"></td>
         <td><input type="number" id="a-rev-0" value="0" placeholder="0" min="0" step="1000"></td>
-      </tr><tr style="">
-        <td><strong>Jul</strong></td>
+      </tr><tr style=""><td><strong>Jul</strong></td>
         <td><input type="number" id="a-li-1" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-g-1" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-mql-1" value="" placeholder="—" min="0"></td>
         <td><input type="number" id="a-s2-1" value="" placeholder="—" min="0"></td>
-        <td><input type="number" id="a-won-1" value="" placeholder="—" min="0" step="0.1"></td>
+        <td><input type="number" id="a-won-1" value="" placeholder="—" min="0" step=".1"></td>
         <td><input type="number" id="a-rev-1" value="" placeholder="0" min="0" step="1000"></td>
-      </tr><tr style="">
-        <td><strong>Aug</strong></td>
+      </tr><tr style=""><td><strong>Aug</strong></td>
         <td><input type="number" id="a-li-2" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-g-2" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-mql-2" value="" placeholder="—" min="0"></td>
         <td><input type="number" id="a-s2-2" value="" placeholder="—" min="0"></td>
-        <td><input type="number" id="a-won-2" value="" placeholder="—" min="0" step="0.1"></td>
+        <td><input type="number" id="a-won-2" value="" placeholder="—" min="0" step=".1"></td>
         <td><input type="number" id="a-rev-2" value="" placeholder="0" min="0" step="1000"></td>
-      </tr><tr style="">
-        <td><strong>Sep</strong></td>
+      </tr><tr style=""><td><strong>Sep</strong></td>
         <td><input type="number" id="a-li-3" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-g-3" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-mql-3" value="" placeholder="—" min="0"></td>
         <td><input type="number" id="a-s2-3" value="" placeholder="—" min="0"></td>
-        <td><input type="number" id="a-won-3" value="" placeholder="—" min="0" step="0.1"></td>
+        <td><input type="number" id="a-won-3" value="" placeholder="—" min="0" step=".1"></td>
         <td><input type="number" id="a-rev-3" value="" placeholder="0" min="0" step="1000"></td>
-      </tr><tr style="">
-        <td><strong>Oct</strong></td>
+      </tr><tr style=""><td><strong>Oct</strong></td>
         <td><input type="number" id="a-li-4" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-g-4" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-mql-4" value="" placeholder="—" min="0"></td>
         <td><input type="number" id="a-s2-4" value="" placeholder="—" min="0"></td>
-        <td><input type="number" id="a-won-4" value="" placeholder="—" min="0" step="0.1"></td>
+        <td><input type="number" id="a-won-4" value="" placeholder="—" min="0" step=".1"></td>
         <td><input type="number" id="a-rev-4" value="" placeholder="0" min="0" step="1000"></td>
-      </tr><tr style="">
-        <td><strong>Nov</strong></td>
+      </tr><tr style=""><td><strong>Nov</strong></td>
         <td><input type="number" id="a-li-5" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-g-5" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-mql-5" value="" placeholder="—" min="0"></td>
         <td><input type="number" id="a-s2-5" value="" placeholder="—" min="0"></td>
-        <td><input type="number" id="a-won-5" value="" placeholder="—" min="0" step="0.1"></td>
+        <td><input type="number" id="a-won-5" value="" placeholder="—" min="0" step=".1"></td>
         <td><input type="number" id="a-rev-5" value="" placeholder="0" min="0" step="1000"></td>
-      </tr><tr style="">
-        <td><strong>Dec</strong></td>
+      </tr><tr style=""><td><strong>Dec</strong></td>
         <td><input type="number" id="a-li-6" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-g-6" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-mql-6" value="" placeholder="—" min="0"></td>
         <td><input type="number" id="a-s2-6" value="" placeholder="—" min="0"></td>
-        <td><input type="number" id="a-won-6" value="" placeholder="—" min="0" step="0.1"></td>
+        <td><input type="number" id="a-won-6" value="" placeholder="—" min="0" step=".1"></td>
         <td><input type="number" id="a-rev-6" value="" placeholder="0" min="0" step="1000"></td>
-      </tr><tr style="">
-        <td><strong>Jan</strong></td>
+      </tr><tr style=""><td><strong>Jan</strong></td>
         <td><input type="number" id="a-li-7" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-g-7" value="" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-mql-7" value="" placeholder="—" min="0"></td>
         <td><input type="number" id="a-s2-7" value="" placeholder="—" min="0"></td>
-        <td><input type="number" id="a-won-7" value="" placeholder="—" min="0" step="0.1"></td>
+        <td><input type="number" id="a-won-7" value="" placeholder="—" min="0" step=".1"></td>
         <td><input type="number" id="a-rev-7" value="" placeholder="0" min="0" step="1000"></td>
       </tr></tbody>
-          </table>
-        </div>
-        <div style="margin-top:16px;display:flex;align-items:center">
-          <button class="save-btn" onclick="saveActuals()">Save actuals</button>
-          <span class="saved-msg" id="saved-msg"></span>
+        </table></div>
+        <div style="margin-top:14px;display:flex;align-items:center">
+          <button class="sbtn" onclick="saveAct()">Save actuals</button>
+          <span class="smsg" id="smsg"></span>
         </div>
       </div>
     </div>
     <div class="card">
-      <div class="card-header"><h3>Actuals summary</h3></div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Month</th><th>Spend</th><th>MQLs</th><th>S2 opps</th><th>Deals won</th><th>Revenue</th><th>Status</th></tr></thead>
-          <tbody id="actuals-summary-body"><tr><td><strong>Jun</strong></td><td>$0</td><td>0</td><td>0</td><td>0</td><td>$0</td><td><span class="badge by">$0 spend</span></td></tr><tr class="fy28"><td><strong>Jul</strong></td><td colspan="6" style="color:var(--text-muted);font-style:italic">No data yet</td></tr><tr class="fy28"><td><strong>Aug</strong></td><td colspan="6" style="color:var(--text-muted);font-style:italic">No data yet</td></tr><tr class="fy28"><td><strong>Sep</strong></td><td colspan="6" style="color:var(--text-muted);font-style:italic">No data yet</td></tr><tr class="fy28"><td><strong>Oct</strong></td><td colspan="6" style="color:var(--text-muted);font-style:italic">No data yet</td></tr><tr class="fy28"><td><strong>Nov</strong></td><td colspan="6" style="color:var(--text-muted);font-style:italic">No data yet</td></tr><tr class="fy28"><td><strong>Dec</strong></td><td colspan="6" style="color:var(--text-muted);font-style:italic">No data yet</td></tr><tr class="fy28"><td><strong>Jan</strong></td><td colspan="6" style="color:var(--text-muted);font-style:italic">No data yet</td></tr></tbody>
-          <tfoot id="actuals-summary-foot"><tr><td>YTD</td><td>$0</td><td>0</td><td>0</td><td>0</td><td>$0</td><td></td></tr></tfoot>
-        </table>
-      </div>
+      <div class="ch"><h3>Actuals summary</h3></div>
+      <div class="tw"><table>
+        <thead><tr><th>Month</th><th>Spend</th><th>MQLs</th><th>S2 opps</th><th>Deals</th><th>Revenue</th><th>Status</th></tr></thead>
+        <tbody id="asb"><tr><td><strong>Jun</strong></td><td>$0</td><td>0</td><td>0</td><td>0</td><td>$0</td><td><span class="bge b-y">$0 spend</span></td></tr><tr class="f8"><td><strong>Jul</strong></td><td colspan="6" style="font-style:italic;color:var(--txm)">No data yet</td></tr><tr class="f8"><td><strong>Aug</strong></td><td colspan="6" style="font-style:italic;color:var(--txm)">No data yet</td></tr><tr class="f8"><td><strong>Sep</strong></td><td colspan="6" style="font-style:italic;color:var(--txm)">No data yet</td></tr><tr class="f8"><td><strong>Oct</strong></td><td colspan="6" style="font-style:italic;color:var(--txm)">No data yet</td></tr><tr class="f8"><td><strong>Nov</strong></td><td colspan="6" style="font-style:italic;color:var(--txm)">No data yet</td></tr><tr class="f8"><td><strong>Dec</strong></td><td colspan="6" style="font-style:italic;color:var(--txm)">No data yet</td></tr><tr class="f8"><td><strong>Jan</strong></td><td colspan="6" style="font-style:italic;color:var(--txm)">No data yet</td></tr></tbody><tfoot id="asf"><tr><td>YTD</td><td>$0</td><td>0</td><td>0</td><td>0</td><td>$0</td><td></td></tr></tfoot>
+      </table></div>
     </div>
-    <div style="background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:var(--radius);padding:12px 16px;font-size:12px;color:var(--blue)">
-      <strong>Phase 2 — Salesforce sync:</strong> Connect SFDC to pull S2 source = "Paid LinkedIn" / "Paid Google" automatically via Zapier → Supabase → this app.
+    <div style="background:var(--bbg);border:1px solid var(--bbr);border-radius:var(--r);padding:11px 15px;font-size:12px;color:var(--blue)">
+      <strong>Phase 2 — Salesforce sync:</strong> Auto-pull S2s sourced from LinkedIn/Google via Zapier → Supabase → this app.
     </div>
   </div>
 
-  <!-- PLAN VS ACTUAL TAB -->
-  <div id="tab-vs" class="tab-panel">
+  <!-- VS TAB -->
+  <div id="tab-vs" class="tp">
     <div class="card">
-      <div class="card-header"><h3>S2 opps: plan vs. actual</h3></div>
-      <div style="padding:14px 16px">
-        <div class="chart-leg">
-          <div class="leg-item"><div class="leg-sq" style="background:#F5C84280;border:1px solid var(--cassava)"></div>S2 plan</div>
-          <div class="leg-item"><div class="leg-sq" style="background:var(--cacao)"></div>S2 actual</div>
-          <div class="leg-item"><div class="leg-sq" style="background:#BBF7D0;height:3px;border-radius:0;align-self:center"></div>Cum. plan</div>
-          <div class="leg-item"><div class="leg-sq" style="background:var(--green);height:3px;border-radius:0;align-self:center"></div>Cum. actual</div>
+      <div class="ch"><h3>S2 opps: plan vs. actual</h3></div>
+      <div style="padding:13px 15px">
+        <div class="leg">
+          <div class="li2"><div class="lsq" style="background:#F5C84260;border:1px solid #F5C842"></div>S2 plan</div>
+          <div class="li2"><div class="lsq" style="background:#1a1a1a"></div>S2 actual</div>
+          <div class="li2"><div class="lsq" style="background:#BBF7D0;height:3px;border-radius:0;align-self:center"></div>Cum. plan</div>
+          <div class="li2"><div class="lsq" style="background:var(--green);height:3px;border-radius:0;align-self:center"></div>Cum. actual</div>
         </div>
-        <div class="chart-wrap"><canvas id="vs-s2-chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
+        <div class="svgwrap" id="vs-s2-wrap"><svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif"><line x1="48" y1="10" x2="752" y2="10" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="50.5" x2="752" y2="50.5" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="91" x2="752" y2="91" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="131.5" x2="752" y2="131.5" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="172" x2="752" y2="172" stroke="#E4E4DE" stroke-width="1"></line><text x="43" y="14" text-anchor="end" font-size="9" fill="#9B9B94">0.64</text><text x="43" y="54.5" text-anchor="end" font-size="9" fill="#9B9B94">0.48</text><text x="43" y="95" text-anchor="end" font-size="9" fill="#9B9B94">0.32</text><text x="43" y="135.5" text-anchor="end" font-size="9" fill="#9B9B94">0.16</text><text x="43" y="176" text-anchor="end" font-size="9" fill="#9B9B94">0.00</text><text x="757" y="14" text-anchor="start" font-size="9" fill="#9B9B94">3</text><text x="757" y="54.5" text-anchor="start" font-size="9" fill="#9B9B94">3</text><text x="757" y="95" text-anchor="start" font-size="9" fill="#9B9B94">2</text><text x="757" y="135.5" text-anchor="start" font-size="9" fill="#9B9B94">0.8</text><text x="757" y="176" text-anchor="start" font-size="9" fill="#9B9B94">0.0</text><rect x="62" y="121.375" width="30" height="50.625" fill="#F5C84260" rx="2"></rect><rect x="150" y="121.375" width="30" height="50.625" fill="#F5C84260" rx="2"></rect><rect x="238" y="80.875" width="30" height="91.125" fill="#F5C84260" rx="2"></rect><rect x="326" y="80.875" width="30" height="91.125" fill="#F5C84260" rx="2"></rect><rect x="414" y="80.875" width="30" height="91.125" fill="#F5C84260" rx="2"></rect><rect x="502" y="10" width="30" height="162" fill="#F5C84260" rx="2"></rect><rect x="590" y="10" width="30" height="162" fill="#F5C84260" rx="2"></rect><rect x="678" y="10" width="30" height="162" fill="#F5C84260" rx="2"></rect><path d="M92,162.47058823529412L180,152.94117647058823L268,135.78823529411767L356,118.63529411764705L444,101.48235294117647L532,70.98823529411764L620,40.49411764705882L708,10" fill="none" stroke="#BBF7D0" stroke-width="2" stroke-dasharray=""></path><circle cx="92" cy="162.47058823529412" r="3" fill="#BBF7D0"></circle><circle cx="180" cy="152.94117647058823" r="3" fill="#BBF7D0"></circle><circle cx="268" cy="135.78823529411767" r="3" fill="#BBF7D0"></circle><circle cx="356" cy="118.63529411764705" r="3" fill="#BBF7D0"></circle><circle cx="444" cy="101.48235294117647" r="3" fill="#BBF7D0"></circle><circle cx="532" cy="70.98823529411764" r="3" fill="#BBF7D0"></circle><circle cx="620" cy="40.49411764705882" r="3" fill="#BBF7D0"></circle><circle cx="708" cy="10" r="3" fill="#BBF7D0"></circle><path d="M92,172" fill="none" stroke="#16A34A" stroke-width="2" stroke-dasharray=""></path><circle cx="92" cy="172" r="3" fill="#16A34A"></circle><text x="92" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jun</text><text x="180" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jul</text><text x="268" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Aug</text><text x="356" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Sep</text><text x="444" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Oct</text><text x="532" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Nov</text><text x="620" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Dec</text><text x="708" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jan</text></svg></div>
       </div>
     </div>
     <div class="card">
-      <div class="card-header"><h3>Plan vs. actual — month by month</h3></div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Month</th><th>Spend plan</th><th>Spend actual</th><th>Var</th><th>Pipeline plan</th><th>MQL plan</th><th>MQL actual</th><th>S2 plan</th><th>S2 actual</th><th>Rev plan</th><th>Rev actual</th><th>Rev var</th><th>FY27?</th></tr></thead>
-          <tbody id="vs-body"><tr class="">
-      <td><strong>Jun</strong></td><td>$5k</td><td>$0</td><td class="var-neg">$-5000</td>
-      <td>$50k</td><td>1</td><td>0</td>
-      <td>0.2</td><td>0</td>
-      <td>$3k</td><td>$0</td><td class="var-neg">$-2500</td><td><span class="badge bg">FY27</span></td></tr><tr class="">
-      <td><strong>Jul</strong></td><td>$5k</td><td>—</td><td style="color:var(--text-muted)">—</td>
-      <td>$50k</td><td>1</td><td>—</td>
-      <td>0.2</td><td>—</td>
-      <td>$3k</td><td>—</td><td style="color:var(--text-muted)">—</td><td><span class="badge bg">FY27</span></td></tr><tr class="">
-      <td><strong>Aug</strong></td><td>$10k</td><td>—</td><td style="color:var(--text-muted)">—</td>
-      <td>$90k</td><td>2</td><td>—</td>
-      <td>0.4</td><td>—</td>
-      <td>$5k</td><td>—</td><td style="color:var(--text-muted)">—</td><td><span class="badge bg">FY27</span></td></tr><tr class="">
-      <td><strong>Sep</strong></td><td>$10k</td><td>—</td><td style="color:var(--text-muted)">—</td>
-      <td>$90k</td><td>2</td><td>—</td>
-      <td>0.4</td><td>—</td>
-      <td>$5k</td><td>—</td><td style="color:var(--text-muted)">—</td><td><span class="badge bg">FY27</span></td></tr><tr class="">
-      <td><strong>Oct</strong></td><td>$10k</td><td>—</td><td style="color:var(--text-muted)">—</td>
-      <td>$90k</td><td>2</td><td>—</td>
-      <td>0.4</td><td>—</td>
-      <td>$5k</td><td>—</td><td style="color:var(--text-muted)">—</td><td><span class="badge bg">FY27</span></td></tr><tr class="fy28">
-      <td><strong>Nov</strong></td><td>$17k</td><td>—</td><td style="color:var(--text-muted)">—</td>
-      <td>$160k</td><td>3</td><td>—</td>
-      <td>0.6</td><td>—</td>
-      <td>—</td><td>—</td><td style="color:var(--text-muted)">—</td><td><span class="badge bb">FY28</span></td></tr><tr class="fy28">
-      <td><strong>Dec</strong></td><td>$17k</td><td>—</td><td style="color:var(--text-muted)">—</td>
-      <td>$160k</td><td>3</td><td>—</td>
-      <td>0.6</td><td>—</td>
-      <td>—</td><td>—</td><td style="color:var(--text-muted)">—</td><td><span class="badge bb">FY28</span></td></tr><tr class="fy28">
-      <td><strong>Jan</strong></td><td>$17k</td><td>—</td><td style="color:var(--text-muted)">—</td>
-      <td>$160k</td><td>3</td><td>—</td>
-      <td>0.6</td><td>—</td>
-      <td>—</td><td>—</td><td style="color:var(--text-muted)">—</td><td><span class="badge bb">FY28</span></td></tr></tbody>
-          <tfoot id="vs-foot"><tr><td>Total</td><td>$90k</td><td>$0</td><td></td><td></td>
-    <td>17</td><td>0</td><td>3</td><td>0</td>
-    <td>$19k</td><td>$0</td><td></td><td></td></tr></tfoot>
-        </table>
+      <div class="ch"><h3>Plan vs. actual — month by month</h3></div>
+      <div class="tw"><table>
+        <thead><tr><th>Month</th><th>Spend plan</th><th>Spend actual</th><th>Var</th><th>Pipeline</th><th>MQL plan</th><th>MQL act</th><th>S2 plan</th><th>S2 act</th><th>Rev plan</th><th>Rev actual</th><th>Rev var</th><th>FY27?</th></tr></thead>
+        <tbody id="vsb"><tr class=""><td><strong>Jun</strong></td><td>$5k</td><td>$0</td><td class="vn">$-5000</td><td>$50k</td><td>1</td><td>0</td><td>0.2</td><td>0</td><td>$3k</td><td>$0</td><td class="vn">$-2500</td><td><span class="bge b-g">FY27</span></td></tr><tr class=""><td><strong>Jul</strong></td><td>$5k</td><td>—</td><td style="color:var(--txm)">—</td><td>$50k</td><td>1</td><td>—</td><td>0.2</td><td>—</td><td>$3k</td><td>—</td><td style="color:var(--txm)">—</td><td><span class="bge b-g">FY27</span></td></tr><tr class=""><td><strong>Aug</strong></td><td>$10k</td><td>—</td><td style="color:var(--txm)">—</td><td>$90k</td><td>2</td><td>—</td><td>0.4</td><td>—</td><td>$5k</td><td>—</td><td style="color:var(--txm)">—</td><td><span class="bge b-g">FY27</span></td></tr><tr class=""><td><strong>Sep</strong></td><td>$10k</td><td>—</td><td style="color:var(--txm)">—</td><td>$90k</td><td>2</td><td>—</td><td>0.4</td><td>—</td><td>$5k</td><td>—</td><td style="color:var(--txm)">—</td><td><span class="bge b-g">FY27</span></td></tr><tr class=""><td><strong>Oct</strong></td><td>$10k</td><td>—</td><td style="color:var(--txm)">—</td><td>$90k</td><td>2</td><td>—</td><td>0.4</td><td>—</td><td>$5k</td><td>—</td><td style="color:var(--txm)">—</td><td><span class="bge b-g">FY27</span></td></tr><tr class="f8"><td><strong>Nov</strong></td><td>$17k</td><td>—</td><td style="color:var(--txm)">—</td><td>$160k</td><td>3</td><td>—</td><td>0.6</td><td>—</td><td>—</td><td>—</td><td style="color:var(--txm)">—</td><td><span class="bge b-b">FY28</span></td></tr><tr class="f8"><td><strong>Dec</strong></td><td>$17k</td><td>—</td><td style="color:var(--txm)">—</td><td>$160k</td><td>3</td><td>—</td><td>0.6</td><td>—</td><td>—</td><td>—</td><td style="color:var(--txm)">—</td><td><span class="bge b-b">FY28</span></td></tr><tr class="f8"><td><strong>Jan</strong></td><td>$17k</td><td>—</td><td style="color:var(--txm)">—</td><td>$160k</td><td>3</td><td>—</td><td>0.6</td><td>—</td><td>—</td><td>—</td><td style="color:var(--txm)">—</td><td><span class="bge b-b">FY28</span></td></tr></tbody><tfoot id="vsf"><tr><td>Total</td><td>$90k</td><td>$0</td><td></td><td></td><td>17</td><td>0</td><td>3</td><td>0</td><td>$19k</td><td>$0</td><td></td><td></td></tr></tfoot>
+      </table></div>
+    </div>
+    <div class="card">
+      <div class="ch"><h3>Spend: plan vs. actual</h3></div>
+      <div style="padding:13px 15px">
+        <div class="leg"><div class="li2"><div class="lsq" style="background:#C8C8C0"></div>Plan</div><div class="li2"><div class="lsq" style="background:#1a1a1a"></div>Actual</div></div>
+        <div class="svgwrap" id="vs-sp-wrap"><svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif"><line x1="48" y1="10" x2="790" y2="10" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="50.5" x2="790" y2="50.5" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="91" x2="790" y2="91" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="131.5" x2="790" y2="131.5" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="172" x2="790" y2="172" stroke="#E4E4DE" stroke-width="1"></line><text x="43" y="14" text-anchor="end" font-size="9" fill="#9B9B94">$17k</text><text x="43" y="54.5" text-anchor="end" font-size="9" fill="#9B9B94">$13k</text><text x="43" y="95" text-anchor="end" font-size="9" fill="#9B9B94">$9k</text><text x="43" y="135.5" text-anchor="end" font-size="9" fill="#9B9B94">$4k</text><text x="43" y="176" text-anchor="end" font-size="9" fill="#9B9B94">0.00</text><rect x="62.375" y="124.35294117647058" width="32" height="47.64705882352941" fill="#C8C8C0" rx="2"></rect><rect x="155.125" y="124.35294117647058" width="32" height="47.64705882352941" fill="#C8C8C0" rx="2"></rect><rect x="247.875" y="81.47058823529412" width="32" height="90.52941176470588" fill="#C8C8C0" rx="2"></rect><rect x="340.625" y="81.47058823529412" width="32" height="90.52941176470588" fill="#C8C8C0" rx="2"></rect><rect x="433.375" y="81.47058823529412" width="32" height="90.52941176470588" fill="#C8C8C0" rx="2"></rect><rect x="526.125" y="10" width="32" height="162" fill="#C8C8C0" rx="2"></rect><rect x="618.875" y="10" width="32" height="162" fill="#C8C8C0" rx="2"></rect><rect x="711.625" y="10" width="32" height="162" fill="#C8C8C0" rx="2"></rect><text x="94.375" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jun</text><text x="187.125" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jul</text><text x="279.875" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Aug</text><text x="372.625" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Sep</text><text x="465.375" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Oct</text><text x="558.125" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Nov</text><text x="650.875" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Dec</text><text x="743.625" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jan</text></svg></div>
       </div>
     </div>
     <div class="card">
-      <div class="card-header"><h3>Spend: plan vs. actual</h3></div>
-      <div style="padding:14px 16px">
-        <div class="chart-leg">
-          <div class="leg-item"><div class="leg-sq" style="background:#C8C8C0"></div>Plan</div>
-          <div class="leg-item"><div class="leg-sq" style="background:var(--cacao)"></div>Actual</div>
-        </div>
-        <div class="chart-wrap"><canvas id="vs-spend-chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
+      <div class="ch"><h3>Revenue: plan vs. actual (FY27)</h3></div>
+      <div style="padding:13px 15px">
+        <div class="leg"><div class="li2"><div class="lsq" style="background:var(--cassava)"></div>Plan</div><div class="li2"><div class="lsq" style="background:var(--green)"></div>Actual</div></div>
+        <div class="svgwrap" id="vs-rv-wrap"><svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif"><line x1="48" y1="10" x2="790" y2="10" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="50.5" x2="790" y2="50.5" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="91" x2="790" y2="91" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="131.5" x2="790" y2="131.5" stroke="#E4E4DE" stroke-width="1"></line><line x1="48" y1="172" x2="790" y2="172" stroke="#E4E4DE" stroke-width="1"></line><text x="43" y="14" text-anchor="end" font-size="9" fill="#9B9B94">$5k</text><text x="43" y="54.5" text-anchor="end" font-size="9" fill="#9B9B94">$3k</text><text x="43" y="95" text-anchor="end" font-size="9" fill="#9B9B94">$2k</text><text x="43" y="135.5" text-anchor="end" font-size="9" fill="#9B9B94">$1k</text><text x="43" y="176" text-anchor="end" font-size="9" fill="#9B9B94">0.00</text><rect x="62.375" y="82.00000000000001" width="32" height="89.99999999999999" fill="#F5C842" rx="2"></rect><rect x="155.125" y="82.00000000000001" width="32" height="89.99999999999999" fill="#F5C842" rx="2"></rect><rect x="247.875" y="10" width="32" height="162" fill="#F5C842" rx="2"></rect><rect x="340.625" y="10" width="32" height="162" fill="#F5C842" rx="2"></rect><rect x="433.375" y="10" width="32" height="162" fill="#F5C842" rx="2"></rect><text x="94.375" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jun</text><text x="187.125" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jul</text><text x="279.875" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Aug</text><text x="372.625" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Sep</text><text x="465.375" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Oct</text><text x="558.125" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Nov</text><text x="650.875" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Dec</text><text x="743.625" y="194" text-anchor="middle" font-size="10" fill="#6B6B65">Jan</text></svg></div>
       </div>
     </div>
     <div class="card">
-      <div class="card-header"><h3>Revenue: plan vs. actual (FY27)</h3></div>
-      <div style="padding:14px 16px">
-        <div class="chart-leg">
-          <div class="leg-item"><div class="leg-sq" style="background:var(--cassava)"></div>Plan</div>
-          <div class="leg-item"><div class="leg-sq" style="background:var(--green)"></div>Actual</div>
-        </div>
-        <div class="chart-wrap"><canvas id="vs-rev-chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
-      </div>
+      <div class="ch"><h3>Goal tracking — FY27 ads target</h3></div>
+      <div style="padding:15px"><div id="gt">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:14px">
+      <div class="mc"><div class="mv">$225k</div><div class="ml">FY27 ads target</div></div>
+      <div class="mc"><div class="mv" style="color:var(--li)">$0</div><div class="ml">Actual revenue to date</div></div>
+      <div class="mc"><div class="mv" style="color:var(--li)">0%</div><div class="ml">of target achieved</div></div>
     </div>
-    <div class="card">
-      <div class="card-header"><h3>Goal tracking — FY27 ads target</h3></div>
-      <div style="padding:16px"><div id="goal-track">
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px">
-      <div class="metric"><div class="mval">$225k</div><div class="mlbl">FY27 ads target</div></div>
-      <div class="metric"><div class="mval" style="color:var(--li-blue)">$0</div><div class="mlbl">Actual revenue to date</div></div>
-      <div class="metric"><div class="mval" style="color:var(--li-blue)">0%</div><div class="mlbl">of target achieved</div></div>
+    <div style="background:var(--surface-3);border-radius:5px;height:13px;overflow:hidden;margin-bottom:7px">
+      <div style="height:100%;width:0%;background:var(--li);border-radius:5px;transition:width .4s"></div>
     </div>
-    <div style="background:var(--surface-3);border-radius:6px;height:14px;overflow:hidden;margin-bottom:8px">
-      <div style="height:100%;width:0%;background:var(--li-blue);border-radius:6px;transition:width .4s"></div>
-    </div>
-    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-muted);margin-bottom:12px"><span>$0</span><span>Target: $225k</span></div>
-    <div style="font-size:12px;color:var(--text-secondary);line-height:1.7">
-      Plan generates <strong>$19k</strong> in FY27 closes — 
-      <strong style="color:var(--amber)">8% of target</strong>.
-      <br><span style="color:var(--amber)">⚠ No actuals yet — enter data in the Actuals tab as campaigns run.</span>
-    </div></div></div>
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--txm);margin-bottom:11px"><span>$0</span><span>Target: $225k</span></div>
+    <div style="font-size:12px;color:var(--tx2);line-height:1.7">Plan generates <strong>$19k</strong> in FY27 closes — <strong style="color:var(--amber)">8% of target</strong>. <span style="color:var(--amber)">⚠ No actuals yet — enter data in the Actuals tab.</span></div></div></div>
     </div>
   </div>
-
 </main>
 </div>
 
-<footer style="text-align:center;padding:1.5rem;font-size:11px;color:var(--text-muted);border-top:1px solid var(--border)">
-  AppZen Growth &amp; Lifecycle · AP Inbox Commercial · FY27 (Feb 2026 – Jan 2027) · Internal use only
+<footer style="text-align:center;padding:1.5rem;font-size:11px;color:var(--txm);border-top:1px solid var(--border)">
+  AppZen Growth &amp; Lifecycle · AP Inbox Commercial · FY27 (Feb 2026–Jan 2027) · Internal
 </footer>
 
-<script src="./index_files/chart.umd.js"></script>
 <script>
-// ── Constants ─────────────────────────────────────────────────────────────────
-const MO  = ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'];
-const CAL = ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'];
-const KEY = 'appzen_apinbox_actuals_v2';
+const MO=['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'];
+const CAL=['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'];
+const KEY='az_apinbox_v3';
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
-const f  = n => n >= 1e6 ? '$'+(n/1e6).toFixed(2)+'M' : n >= 1000 ? '$'+Math.round(n/1000)+'k' : '$'+Math.round(n);
-const pc = n => Math.round(n*100)+'%';
-const gv = id => parseFloat(document.getElementById(id).value);
-const st = (id,v) => { const e=document.getElementById(id); if(e) e.textContent=v; };
+// ── helpers ──────────────────────────────────────────────────────────────────
+const f=n=>n>=1e6?'$'+(n/1e6).toFixed(2)+'M':n>=1000?'$'+Math.round(n/1000)+'k':'$'+Math.round(n);
+const pc=n=>Math.round(n*100)+'%';
+const gv=id=>parseFloat(document.getElementById(id).value);
+const st=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v};
 
-function closeInfo(i, cyc) {
-  const lag = Math.round(cyc/30);
-  const idx = i + lag;
-  const lbl = (CAL[Math.min(idx,CAL.length-1)]||'FY28') + (idx>7?' (FY28)':'');
-  return { lbl, fy27: idx<=7 };
+function ci(i,cyc){const lag=Math.round(cyc/30),idx=i+lag;return{lbl:(CAL[Math.min(idx,11)]||'FY28')+(idx>7?' (FY28)':''),fy:idx<=7}}
+function cm(li,g,lR,gR,ACV,MR,CR){const lP=li*lR,gP=g*gR,pipe=lP+gP,mql=ACV>0?pipe/ACV:0,s2=mql*MR,won=s2*CR;return{lP,gP,pipe,mql,s2,won}}
+
+// ── SVG bar chart ─────────────────────────────────────────────────────────────
+// datasets: [{data:[], color:''}, ...], line: {data:[], color:'', id:'y2'}
+function svgBar(wrap, labels, datasets, opts={}) {
+  const W=800, H=200, PL=48, PR=opts.y2?48:10, PT=10, PB=28;
+  const cW=W-PL-PR, cH=H-PT-PB;
+  const n=labels.length;
+  const bw=Math.floor(cW/n*0.6);
+  const bars=datasets.filter(d=>!d.line);
+  const lines=datasets.filter(d=>d.line);
+  // max value
+  let mx=0;
+  bars.forEach(d=>d.data.forEach(v=>{if(v!=null&&v>mx)mx=v}));
+  if(mx===0)mx=1;
+  let mx2=0;
+  lines.forEach(d=>d.data.forEach(v=>{if(v!=null&&v>mx2)mx2=v}));
+  if(mx2===0)mx2=1;
+  const sy=v=>PT+cH*(1-v/mx);
+  const sy2=v=>PT+cH*(1-v/mx2);
+  const cx=i=>PL+i*(cW/n)+cW/(n*2);
+  // tick formatter
+  const tf=v=>v>=1000?'$'+Math.round(v/1000)+'k':v>=1?v.toFixed(1):v.toFixed(2);
+  let svg=`<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif">`;
+  // grid
+  for(let t=0;t<=4;t++){const y=PT+cH*t/4;svg+=`<line x1="${PL}" y1="${y}" x2="${W-PR}" y2="${y}" stroke="#E4E4DE" stroke-width="1"/>`}
+  // y axis labels left
+  for(let t=0;t<=4;t++){const v=mx*(1-t/4),y=PT+cH*t/4;svg+=`<text x="${PL-5}" y="${y+4}" text-anchor="end" font-size="9" fill="#9B9B94">${tf(v)}</text>`}
+  // y axis labels right (line)
+  if(lines.length&&opts.y2){for(let t=0;t<=4;t++){const v=mx2*(1-t/4),y=PT+cH*t/4;svg+=`<text x="${W-PR+5}" y="${y+4}" text-anchor="start" font-size="9" fill="#9B9B94">${v<1?v.toFixed(1):Math.round(v)}</text>`}}
+  // bars — stacked or grouped
+  const barDs=bars;
+  barDs.forEach((d,di)=>{
+    d.data.forEach((v,i)=>{
+      if(v==null||v===0)return;
+      const bh=cH*(v/mx);
+      const totalBars=barDs.length;
+      const bwg=Math.floor(cW/n*0.7/totalBars);
+      const xoff=i*(cW/n)+PL+(cW/n-bwg*totalBars)/2+di*bwg;
+      svg+=`<rect x="${xoff}" y="${PT+cH-bh}" width="${bwg}" height="${bh}" fill="${d.color}" rx="2"/>`;
+    });
+  });
+  // line datasets
+  lines.forEach(d=>{
+    const pts=d.data.map((v,i)=>v!=null?`${cx(i)},${sy2(v)}`:null);
+    // draw connected segments
+    let seg='';
+    pts.forEach((p,i)=>{
+      if(p==null)return;
+      if(i===0||pts[i-1]==null)seg+=`M${p}`;
+      else seg+=`L${p}`;
+    });
+    if(seg)svg+=`<path d="${seg}" fill="none" stroke="${d.color}" stroke-width="2" stroke-dasharray="${d.dash||''}"/>`;
+    pts.forEach((p,i)=>{if(p)svg+=`<circle cx="${cx(i)}" cy="${sy2(d.data[i])}" r="3" fill="${d.color}"/>`});
+  });
+  // x labels
+  labels.forEach((l,i)=>svg+=`<text x="${cx(i)}" y="${H-6}" text-anchor="middle" font-size="10" fill="#6B6B65">${l}</text>`);
+  svg+='</svg>';
+  wrap.innerHTML=svg;
 }
 
-// MQLs = pipeline ÷ ACV — ratio drives MQL count directly
-function calcMonth(liSp, gSp, liR, gR, ACV, MR, CR) {
-  const liP = liSp * liR, gP = gSp * gR, pipe = liP + gP;
-  const mql = ACV > 0 ? pipe / ACV : 0;
-  const s2  = mql * MR;
-  const won = s2  * CR;
-  return { liP, gP, pipe, mql, s2, won };
+// ── actuals ───────────────────────────────────────────────────────────────────
+function loadAct(){try{const r=localStorage.getItem(KEY);if(r)return JSON.parse(r)}catch(e){}
+  return MO.map((_,i)=>({liSp:i===0?0:null,gSp:i===0?0:null,mql:i===0?0:null,s2:i===0?0:null,won:i===0?0:null,rev:i===0?0:null}))}
+function pv(id){const e=document.getElementById(id);if(!e||e.value==='')return null;const v=parseFloat(e.value);return isNaN(v)?null:v}
+let act=loadAct();
+let skipForm=false;
+
+function saveAct(){
+  const d=MO.map((_,i)=>({liSp:pv(`a-li-${i}`),gSp:pv(`a-g-${i}`),mql:pv(`a-mql-${i}`),s2:pv(`a-s2-${i}`),won:pv(`a-won-${i}`),rev:pv(`a-rev-${i}`)}));
+  act=d;
+  let ok=false;try{localStorage.setItem(KEY,JSON.stringify(d));ok=true}catch(e){}
+  const m=document.getElementById('smsg');
+  m.style.display='inline';m.style.color=ok?'var(--green)':'var(--amber)';
+  m.textContent=ok?'✓ Saved':'✓ Applied this session';
+  setTimeout(()=>m.style.display='none',3000);
+  skipForm=false;upd();
 }
 
-// ── Actuals ───────────────────────────────────────────────────────────────────
-function loadActuals() {
-  try { const r = localStorage.getItem(KEY); if(r) return JSON.parse(r); } catch(e) {}
-  return MO.map((_,i) => ({ liSp:i===0?0:null, gSp:i===0?0:null, mql:i===0?0:null, s2:i===0?0:null, won:i===0?0:null, rev:i===0?0:null }));
-}
-function pv(id) { const e=document.getElementById(id); if(!e||e.value==='') return null; const v=parseFloat(e.value); return isNaN(v)?null:v; }
-
-function saveActuals() {
-  const data = MO.map((_,i) => ({ liSp:pv(`a-li-${i}`), gSp:pv(`a-g-${i}`), mql:pv(`a-mql-${i}`), s2:pv(`a-s2-${i}`), won:pv(`a-won-${i}`), rev:pv(`a-rev-${i}`) }));
-  actuals = data;
-  let ok = false;
-  try { localStorage.setItem(KEY, JSON.stringify(data)); ok=true; } catch(e) {}
-  const msg = document.getElementById('saved-msg');
-  msg.style.display = 'inline';
-  msg.style.color = ok ? 'var(--green)' : 'var(--amber)';
-  msg.textContent = ok ? '✓ Saved' : '✓ Applied this session';
-  setTimeout(() => msg.style.display='none', 3000);
-  updateAll.skipForm = false;
-  updateAll();
+// ── tab switch ────────────────────────────────────────────────────────────────
+function sw(name,btn){
+  document.querySelectorAll('.tp').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('on'));
+  document.getElementById('tab-'+name).classList.add('on');
+  btn.classList.add('on');
 }
 
-// ── Tab switch ────────────────────────────────────────────────────────────────
-function switchTab(name, btn) {
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-'+name).classList.add('active');
-  if(btn) btn.classList.add('active');
-  setTimeout(() => {
-    updateAll.skipForm = true;
-    updateAll();
-    updateAll.skipForm = false;
-    [planChart, s2Chart, vsS2Chart, vsSpendChart, vsRevChart].forEach(c => { if(c) c.resize(); });
-  }, 60);
-}
-
-// ── Charts ────────────────────────────────────────────────────────────────────
-let planChart, s2Chart, vsS2Chart, vsSpendChart, vsRevChart;
-
-function mkS2Chart(id, planData, actData, cumPlan, cumAct) {
-  const ctx = document.getElementById(id);
-  if (!ctx) return null;
-  return new Chart(ctx.getContext('2d'), { type:'bar', data:{ labels:MO, datasets:[
-    { label:'S2 plan', data:planData, backgroundColor:'#F5C84250', borderColor:'#F5C842', borderWidth:1, borderRadius:3, yAxisID:'y' },
-    { label:'S2 actual', data:actData, backgroundColor:'#1a1a1a', borderRadius:3, yAxisID:'y' },
-    { label:'Cum plan', data:cumPlan, type:'line', borderColor:'#BBF7D0', borderWidth:2, pointRadius:3, fill:false, yAxisID:'y2', tension:.3, spanGaps:true },
-    { label:'Cum actual', data:cumAct, type:'line', borderColor:'#16A34A', borderWidth:2, pointRadius:4, fill:false, yAxisID:'y2', tension:.3, spanGaps:false }
-  ]}, options:{ responsive:true, maintainAspectRatio:false,
-    plugins:{ legend:{display:false} },
-    scales:{
-      x:{ grid:{display:false}, ticks:{font:{size:11}} },
-      y:{ position:'left', ticks:{font:{size:10}}, grid:{color:'rgba(0,0,0,0.05)'} },
-      y2:{ position:'right', ticks:{font:{size:10}}, grid:{display:false} }
-    }
-  }});
-}
-
-// ── Main update ───────────────────────────────────────────────────────────────
-let actuals = loadActuals();
-
-function updateAll() {
-  const liR=gv('liR'), gR=gv('gR');
-  const liJun=gv('liJun'), liJul=gv('liJul'), liQ3=gv('liQ3'), liQ4=gv('liQ4');
-  const gQ3=gv('gQ3'), gQ4=gv('gQ4');
-  const ACV=gv('ACV'), MD=gv('MD'), OD=gv('OD');
-  const MR=gv('MR')/100, CR=gv('CR')/100;
-  const T=gv('T'), AS=gv('AS')/100;
-  const at=T*AS, cyc=MD+OD;
-
+// ── main update ───────────────────────────────────────────────────────────────
+function upd(){
+  const liR=gv('liR'),gR=gv('gR');
+  const liJun=gv('liJun'),liJul=gv('liJul'),liQ3=gv('liQ3'),liQ4=gv('liQ4');
+  const gQ3=gv('gQ3'),gQ4=gv('gQ4');
+  const ACV=gv('ACV'),MD=gv('MD'),OD=gv('OD');
+  const MR=gv('MR')/100,CR=gv('CR')/100;
+  const T=gv('T'),AS=gv('AS')/100;
+  const at=T*AS,cyc=MD+OD;
   const liSp=[liJun,liJul,liQ3,liQ3,liQ3,liQ4,liQ4,liQ4];
-  const gSp =[0,    0,    gQ3, gQ3, gQ3, gQ4, gQ4, gQ4];
+  const gSp=[0,0,gQ3,gQ3,gQ3,gQ4,gQ4,gQ4];
 
-  // Slider labels
-  st('liR-out','$'+liR+':1'); st('gR-out','$'+gR+':1');
-  st('liJun-out',f(liJun)); st('liJul-out',f(liJul));
-  st('liQ3-out',f(liQ3)+'/mo'); st('liQ4-out',f(liQ4)+'/mo');
-  st('gQ3-out',f(gQ3)+'/mo'); st('gQ4-out',f(gQ4)+'/mo');
-  st('ACV-out',f(ACV)); st('MD-out',MD+'d'); st('OD-out',OD+'d');
-  st('MR-out',pc(MR)); st('CR-out',pc(CR));
-  st('T-out',f(T)); st('AS-out',Math.round(AS*100)+'%');
+  // labels
+  st('liR-o','$'+liR+':1');st('gR-o','$'+gR+':1');
+  st('liJun-o',f(liJun));st('liJul-o',f(liJul));
+  st('liQ3-o',f(liQ3)+'/mo');st('liQ4-o',f(liQ4)+'/mo');
+  st('gQ3-o',f(gQ3)+'/mo');st('gQ4-o',f(gQ4)+'/mo');
+  st('ACV-o',f(ACV));st('MD-o',MD+'d');st('OD-o',OD+'d');
+  st('MR-o',pc(MR));st('CR-o',pc(CR));st('T-o',f(T));st('AS-o',Math.round(AS*100)+'%');
 
-  // Blended ratio
-  const totLi=liSp.reduce((a,b)=>a+b,0), totG=gSp.reduce((a,b)=>a+b,0), totSp=totLi+totG;
-  const totPipe=totLi*liR+totG*gR;
-  const blended=totSp>0?Math.round(totPipe/totSp*10)/10:0;
-  const liPct=totSp>0?Math.round(totLi/totSp*100):100, gPct=100-liPct;
-  document.getElementById('ratio-bar').innerHTML=
-    `<div class="ratio-li" style="width:${liPct}%">${liPct>20?'LI '+liR+':1':''}</div>`+
-    `<div class="ratio-g" style="width:${gPct}%">${gPct>15?'G '+gR+':1':''}</div>`;
-  document.getElementById('ratio-meta').innerHTML=`<strong>Blended ${blended}:1</strong> &nbsp;·&nbsp; LI ${liPct}% · G ${gPct}%`;
+  // blended
+  const tli=liSp.reduce((a,b)=>a+b,0),tg=gSp.reduce((a,b)=>a+b,0),ts=tli+tg;
+  const tp=tli*liR+tg*gR,bl=ts>0?Math.round(tp/ts*10)/10:0;
+  const lp=ts>0?Math.round(tli/ts*100):100,gp=100-lp;
+  document.getElementById('rbar').innerHTML=`<div class="rli" style="width:${lp}%">${lp>20?'LI '+liR+':1':''}</div><div class="rgg" style="width:${gp}%">${gp>15?'G '+gR+':1':''}</div>`;
+  document.getElementById('rmeta').innerHTML=`<strong>Blended ${bl}:1</strong> &nbsp;·&nbsp; LI ${lp}% · G ${gp}%`;
 
-  // Build rows
-  const rows = MO.map((m,i) => {
-    const c = calcMonth(liSp[i],gSp[i],liR,gR,ACV,MR,CR);
-    const {lbl,fy27} = closeInfo(i,cyc);
-    return {...c, m, i, lbl, fy27, liSpend:liSp[i], gSpend:gSp[i], totSpend:liSp[i]+gSp[i]};
+  // rows
+  const rows=MO.map((m,i)=>{
+    const c=cm(liSp[i],gSp[i],liR,gR,ACV,MR,CR);
+    const {lbl,fy}=ci(i,cyc);
+    return{...c,m,i,lbl,fy,liSp:liSp[i],gSp:gSp[i],tot:liSp[i]+gSp[i]};
   });
 
-  const sumFY = k => rows.filter(r=>r.fy27).reduce((a,r)=>a+r[k],0);
-  const sumAll = k => rows.reduce((a,r)=>a+r[k],0);
-  const fy27n = rows.filter(r=>r.fy27).length;
-  const pt = fy27n>0?at/fy27n:at;
+  const sfy=k=>rows.filter(r=>r.fy).reduce((a,r)=>a+r[k],0);
+  const sal=k=>rows.reduce((a,r)=>a+r[k],0);
+  const fn=rows.filter(r=>r.fy).length, pt=fn>0?at/fn:at;
+  const tS27=sfy('tot'),tP27=sfy('pipe'),tM27=sfy('mql'),tS227=sfy('s2'),tW27=sfy('won');
+  const tSA=sal('tot'),tPA=sal('pipe'),tMA=sal('mql'),tS2A=sal('s2'),tWA=sal('won');
+  const aRev=act.reduce((a,r)=>a+(r.rev||0),0);
 
-  const tSp27=sumFY('totSpend'), tPp27=sumFY('pipe'), tMq27=sumFY('mql');
-  const tS227=sumFY('s2'), tWn27=sumFY('won');
-  const tSpAll=sumAll('totSpend'), tPpAll=sumAll('pipe');
-  const tMqAll=sumAll('mql'), tS2All=sumAll('s2'), tWnAll=sumAll('won');
+  // metrics
+  st('m0',f(at));st('m1',f(tS27));st('m2',f(tP27));st('m3',bl+':1');
+  st('m4',tW27<1?tW27.toFixed(1):Math.round(tW27));
+  st('m5',f(tW27*ACV));
+  st('m6',tW27>0?f(tS27/tW27):'—');
+  st('m7',aRev>0?f(aRev):'$0');
 
-  const aRev=actuals.reduce((a,r)=>a+(r.rev||0),0);
-
-  // Summary cards
-  st('m-target',f(at)); st('m-spend27',f(tSp27)); st('m-pipe27',f(tPp27));
-  st('m-blended',blended+':1');
-  st('m-deals',tWn27<1?tWn27.toFixed(1):Math.round(tWn27));
-  st('m-rev',f(tWn27*ACV));
-  st('m-cpd',tWn27>0?f(tSp27/tWn27):'—');
-  st('m-arev',aRev>0?f(aRev):'$0');
-
-  // Alert
-  const aok=document.getElementById('alert-ok'), awk=document.getElementById('alert-warn');
-  aok.className='alert alert-ok'; awk.className='alert alert-warn';
-  const planRev=tWn27*ACV;
-  if(planRev>=at){aok.classList.add('show');aok.textContent='✓ Plan generates '+f(planRev)+' vs. '+f(at)+' ads target. '+f(tPpAll-tPp27)+' seeds FY28.';}
-  else{awk.classList.add('show');awk.textContent='⚠ Plan generates '+f(planRev)+' vs. '+f(at)+' — gap '+f(at-planRev)+'. At '+cyc+'d cycle, '+fy27n+'/8 months close by Jan 31.';}
+  // alert
+  const aok=document.getElementById('aok'),awk=document.getElementById('awk');
+  aok.className='al al-ok';awk.className='al al-w';
+  const pr=tW27*ACV;
+  if(pr>=at){aok.classList.add('on');aok.textContent='✓ Plan generates '+f(pr)+' vs. '+f(at)+' ads target. '+f(tPA-tP27)+' seeds FY28.';}
+  else{awk.classList.add('on');awk.textContent='⚠ Plan generates '+f(pr)+' vs. '+f(at)+' — gap '+f(at-pr)+'. At '+cyc+'d cycle, '+fn+'/8 months close by Jan 31.';}
 
   // ── PLAN TAB ──────────────────────────────────────────────────────────────
-  const liBar=[],gBar=[],greyBar=[];
   let html='';
+  const liD=[],gD=[],grD=[];
   rows.forEach(r=>{
-    if(r.fy27){liBar.push(r.liP);gBar.push(r.gP);greyBar.push(0);}
-    else{liBar.push(0);gBar.push(0);greyBar.push(r.pipe);}
-    const fyB=r.fy27?'<span class="badge bg">FY27 ✓</span>':'<span class="badge bb">FY28 →</span>';
-    html+=`<tr class="${r.fy27?'':'fy28'}">
-      <td><strong>${r.m}</strong></td><td>${f(r.liSpend)}</td><td>${r.gSpend>0?f(r.gSpend):'—'}</td><td>${f(r.totSpend)}</td>
+    if(r.fy){liD.push(r.lP);gD.push(r.gP);grD.push(0);}
+    else{liD.push(0);gD.push(0);grD.push(r.pipe);}
+    const fb=r.fy?'<span class="bge b-g">FY27 ✓</span>':'<span class="bge b-b">FY28 →</span>';
+    html+=`<tr class="${r.fy?'':'f8'}">
+      <td><strong>${r.m}</strong></td><td>${f(r.liSp)}</td><td>${r.gSp>0?f(r.gSp):'—'}</td><td>${f(r.tot)}</td>
       <td>${f(r.pipe)}</td><td>${Math.round(r.mql)}</td>
       <td>${r.s2<1?r.s2.toFixed(1):Math.round(r.s2)}</td>
-      <td>${r.fy27?(r.won<1?r.won.toFixed(2):Math.round(r.won)):'—'}</td>
-      <td>${r.fy27?f(r.won*ACV):'—'}</td>
-      <td style="font-size:11px;color:var(--text-muted)">${r.lbl}</td><td>${fyB}</td>
+      <td>${r.fy?(r.won<1?r.won.toFixed(2):Math.round(r.won)):'—'}</td>
+      <td>${r.fy?f(r.won*ACV):'—'}</td>
+      <td style="font-size:11px;color:var(--txm)">${r.lbl}</td><td>${fb}</td>
     </tr>`;
   });
-  document.getElementById('plan-body').innerHTML=html;
-  document.getElementById('plan-foot').innerHTML=`
-    <tr><td>FY27 total</td><td colspan="2">${f(tSp27)}</td><td>${f(tSp27)}</td><td>${f(tPp27)}</td>
-    <td>${Math.round(tMq27)}</td><td>${Math.round(tS227)}</td>
-    <td>${tWn27<1?tWn27.toFixed(1):Math.round(tWn27)}</td><td>${f(tWn27*ACV)}</td><td colspan="2"></td></tr>
-    <tr><td>All 8 mo</td><td colspan="2">${f(tSpAll)}</td><td>${f(tSpAll)}</td><td>${f(tPpAll)}</td>
-    <td>${Math.round(tMqAll)}</td><td>${Math.round(tS2All)}</td>
-    <td>${tWnAll<1?tWnAll.toFixed(1):Math.round(tWnAll)}</td><td>${f(tWnAll*ACV)}</td><td colspan="2"></td></tr>`;
+  document.getElementById('pb').innerHTML=html;
+  document.getElementById('pf').innerHTML=`
+    <tr><td>FY27</td><td colspan="2">${f(tS27)}</td><td>${f(tS27)}</td><td>${f(tP27)}</td><td>${Math.round(tM27)}</td><td>${Math.round(tS227)}</td><td>${tW27<1?tW27.toFixed(1):Math.round(tW27)}</td><td>${f(tW27*ACV)}</td><td colspan="2"></td></tr>
+    <tr><td>All 8mo</td><td colspan="2">${f(tSA)}</td><td>${f(tSA)}</td><td>${f(tPA)}</td><td>${Math.round(tMA)}</td><td>${Math.round(tS2A)}</td><td>${tWA<1?tWA.toFixed(1):Math.round(tWA)}</td><td>${f(tWA*ACV)}</td><td colspan="2"></td></tr>`;
 
-  const ctx1=document.getElementById('plan-chart').getContext('2d');
-  if(planChart)planChart.destroy();
-  planChart=new Chart(ctx1,{type:'bar',data:{labels:MO,datasets:[
-    {label:'LinkedIn',data:liBar,backgroundColor:'#0A66C2',borderRadius:3,stack:'s'},
-    {label:'Google',data:gBar,backgroundColor:'#EA4335',borderRadius:3,stack:'s'},
-    {label:'FY28',data:greyBar,backgroundColor:'#C8C8C0',borderRadius:3,stack:'s'},
-    {label:'Pace',type:'line',data:rows.map(r=>r.fy27?Math.round(pt):null),
-      borderColor:'#F5C842',borderDash:[5,4],borderWidth:2,pointRadius:0,fill:false,spanGaps:false}
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
-    scales:{x:{stacked:true,grid:{display:false},ticks:{font:{size:11}}},
-      y:{stacked:true,ticks:{callback:v=>'$'+Math.round(v/1000)+'k',font:{size:11}},grid:{color:'rgba(0,0,0,0.05)'}}}}});
+  // plan pipeline SVG chart
+  const paceD=rows.map(r=>r.fy?pt:null);
+  svgBar(document.getElementById('plan-chart-wrap'),MO,[
+    {data:liD,color:'#0A66C2'},{data:gD,color:'#EA4335'},{data:grD,color:'#C8C8C0'},
+    {data:paceD,color:'#F5C842',line:true,dash:'5,4'}
+  ],{y2:false});
 
-  // Sensitivity
-  const MQR=[.10,.15,.20,.25,.30], CRR=[.15,.20,.25,.30];
+  // sensitivity
+  const MQR=[.10,.15,.20,.25,.30],CRR=[.15,.20,.25,.30];
   let sh='';
   MQR.forEach(mr=>CRR.forEach(cr=>{
-    const fy=rows.filter(r=>r.fy27);
+    const fy=rows.filter(r=>r.fy);
     const sm=fy.reduce((a,r)=>a+r.mql,0);
     const sw=fy.reduce((a,r)=>a+r.mql*mr*cr,0);
-    const sr=sw*ACV, p=at>0?Math.round(sr/at*100):0;
-    const cls=p>=90?'bg':p>=65?'by':'bgr';
+    const sr=sw*ACV,p=at>0?Math.round(sr/at*100):0;
+    const cls=p>=90?'b-g':p>=65?'b-y':'b-n';
     const cur=Math.abs(mr-MR)<.005&&Math.abs(cr-CR)<.005;
-    sh+=`<tr${cur?' class="sens-cur"':''}><td>${Math.round(mr*100)}%</td><td>${Math.round(cr*100)}%</td>
-      <td>${Math.round(mr*cr*100)}%</td><td>${Math.round(sm)}</td>
-      <td>${sw<1?sw.toFixed(1):Math.round(sw)}</td><td>${f(sr)}</td>
-      <td><span class="badge ${cls}">${p}% of target</span></td></tr>`;
+    sh+=`<tr${cur?' class="sc-cur"':''}><td>${Math.round(mr*100)}%</td><td>${Math.round(cr*100)}%</td><td>${Math.round(mr*cr*100)}%</td><td>${Math.round(sm)}</td><td>${sw<1?sw.toFixed(1):Math.round(sw)}</td><td>${f(sr)}</td><td><span class="bge ${cls}">${p}% of target</span></td></tr>`;
   }));
-  document.getElementById('sens-body').innerHTML=sh;
+  document.getElementById('sb2').innerHTML=sh;
 
-  document.getElementById('tenx-box').innerHTML=
+  document.getElementById('tenx').innerHTML=
     `<strong>This model tracks sourced S2 pipeline only</strong> — new S2 when a qualified meeting happens with a real buyer. No influenced pipeline.<br><br>`+
-    `At ${f(tSpAll)} total spend, 10:1 sourced = <strong>${f(tSpAll*10)} in S2 pipeline</strong> — `+
-    `${Math.round(tSpAll*10/T*100)}% of your <strong>${f(T)}</strong> company target. That breaks the math.<br><br>`+
-    `<strong>10:1 is an influenced number.</strong> Decision campaign sourced ceiling: 8–12:1. Blended today: <strong>${blended}:1</strong>.`;
+    `At ${f(tSA)} total spend, 10:1 sourced = <strong>${f(tSA*10)} in S2 pipeline</strong> — ${Math.round(tSA*10/T*100)}% of your <strong>${f(T)}</strong> company target. That breaks the math.<br><br>`+
+    `<strong>10:1 is an influenced number.</strong> Decision campaign sourced ceiling: 8–12:1. Blended today: <strong>${bl}:1</strong>.`;
 
   // ── ACTUALS FORM ─────────────────────────────────────────────────────────
-  if(!updateAll.skipForm){
+  if(!skipForm){
     let fh='';
     MO.forEach((m,i)=>{
-      const a=actuals[i]||{};
-      const bg=i===0?'background:var(--amber-bg)':'';
-      fh+=`<tr style="${bg}">
-        <td><strong>${m}</strong>${i===0?'<br><span style="font-size:10px;color:var(--amber)">Not live</span>':''}</td>
+      const a=act[i]||{};
+      const bg=i===0?'background:var(--abg)':'';
+      fh+=`<tr style="${bg}"><td><strong>${m}</strong>${i===0?'<br><span style="font-size:10px;color:var(--amber)">Not live</span>':''}</td>
         <td><input type="number" id="a-li-${i}" value="${a.liSp!==null?a.liSp:''}" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-g-${i}" value="${a.gSp!==null?a.gSp:''}" placeholder="0" min="0" step="100"></td>
         <td><input type="number" id="a-mql-${i}" value="${a.mql!==null?a.mql:''}" placeholder="—" min="0"></td>
         <td><input type="number" id="a-s2-${i}" value="${a.s2!==null?a.s2:''}" placeholder="—" min="0"></td>
-        <td><input type="number" id="a-won-${i}" value="${a.won!==null?a.won:''}" placeholder="—" min="0" step="0.1"></td>
+        <td><input type="number" id="a-won-${i}" value="${a.won!==null?a.won:''}" placeholder="—" min="0" step=".1"></td>
         <td><input type="number" id="a-rev-${i}" value="${a.rev!==null?a.rev:''}" placeholder="0" min="0" step="1000"></td>
       </tr>`;
     });
-    document.getElementById('actuals-form-body').innerHTML=fh;
+    document.getElementById('afb').innerHTML=fh;
   }
 
-  // Actuals summary
-  let ah='', atSp=0,atMq=0,atS2=0,atWn=0,atRv=0;
+  // actuals summary
+  let ah='',atS=0,atM=0,atS2=0,atW=0,atR=0;
   MO.forEach((m,i)=>{
-    const a=actuals[i]||{};
+    const a=act[i]||{};
     const sp=(a.liSp||0)+(a.gSp||0);
     const has=a.liSp!==null||a.mql!==null;
-    if(!has&&i>0){ah+=`<tr class="fy28"><td><strong>${m}</strong></td><td colspan="6" style="color:var(--text-muted);font-style:italic">No data yet</td></tr>`;return;}
-    atSp+=sp;atMq+=(a.mql||0);atS2+=(a.s2||0);atWn+=(a.won||0);atRv+=(a.rev||0);
-    const badge=sp>0?'<span class="badge bg">Live</span>':'<span class="badge by">$0 spend</span>';
+    if(!has&&i>0){ah+=`<tr class="f8"><td><strong>${m}</strong></td><td colspan="6" style="font-style:italic;color:var(--txm)">No data yet</td></tr>`;return;}
+    atS+=sp;atM+=(a.mql||0);atS2+=(a.s2||0);atW+=(a.won||0);atR+=(a.rev||0);
+    const badge=sp>0?'<span class="bge b-g">Live</span>':'<span class="bge b-y">$0 spend</span>';
     ah+=`<tr><td><strong>${m}</strong></td><td>${f(sp)}</td><td>${a.mql!==null?a.mql:'—'}</td><td>${a.s2!==null?a.s2:'—'}</td><td>${a.won!==null?a.won:'—'}</td><td>${a.rev!==null?f(a.rev):'—'}</td><td>${badge}</td></tr>`;
   });
-  document.getElementById('actuals-summary-body').innerHTML=ah;
-  document.getElementById('actuals-summary-foot').innerHTML=`<tr><td>YTD</td><td>${f(atSp)}</td><td>${atMq}</td><td>${atS2}</td><td>${atWn}</td><td>${f(atRv)}</td><td></td></tr>`;
+  document.getElementById('asb').innerHTML=ah;
+  document.getElementById('asf').innerHTML=`<tr><td>YTD</td><td>${f(atS)}</td><td>${atM}</td><td>${atS2}</td><td>${atW}</td><td>${f(atR)}</td><td></td></tr>`;
 
-  // S2 chart data
-  const s2Plan=rows.map(r=>parseFloat(r.s2.toFixed(2)));
-  const s2Act=MO.map((_,i)=>actuals[i]?.s2!=null?actuals[i].s2:null);
-  let cp=0,ca=0;
-  const cpArr=[],caArr=[];
+  // S2 chart data (shared between Actuals and VS tabs)
+  const s2P=rows.map(r=>parseFloat(r.s2.toFixed(2)));
+  const s2A=MO.map((_,i)=>act[i]?.s2!=null?act[i].s2:null);
+  let cp=0,ca=0;const cpA=[],caA=[];
   MO.forEach((_,i)=>{
-    cp+=s2Plan[i];cpArr.push(parseFloat(cp.toFixed(2)));
-    if(s2Act[i]!=null){ca+=s2Act[i];caArr.push(parseFloat(ca.toFixed(2)));}
-    else caArr.push(null);
+    cp+=s2P[i];cpA.push(parseFloat(cp.toFixed(2)));
+    if(s2A[i]!=null){ca+=s2A[i];caA.push(parseFloat(ca.toFixed(2)));}
+    else caA.push(null);
   });
-
-  const totPS2=parseFloat(rows.reduce((a,r)=>a+r.s2,0).toFixed(1));
-  const totAS2=s2Act.reduce((a,v)=>a+(v||0),0);
-  const s2pct=totPS2>0?Math.round(totAS2/totPS2*100):0;
+  const totPS=parseFloat(rows.reduce((a,r)=>a+r.s2,0).toFixed(1));
+  const totAS=s2A.reduce((a,v)=>a+(v||0),0);
+  const s2pct=totPS>0?Math.round(totAS/totPS*100):0;
   const s2col=s2pct>=90?'var(--green)':s2pct>=60?'var(--amber)':'var(--red)';
-  document.getElementById('s2-summary').innerHTML=[
-    {v:totAS2,l:'Actual S2s to date',c:s2col},
-    {v:totPS2,l:'Plan S2s (8 months)',c:'var(--text-primary)'},
-    {v:s2pct+'%',l:'of plan achieved',c:s2col},
-    {v:Math.max(0,parseFloat((totPS2-totAS2).toFixed(1))),l:'S2s remaining',c:'var(--amber)'}
-  ].map(x=>`<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;flex:1;min-width:110px">
-    <div style="font-size:18px;font-weight:700;color:${x.c}">${x.v}</div>
-    <div style="font-size:11px;color:var(--text-muted)">${x.l}</div></div>`).join('');
+  document.getElementById('s2sum').innerHTML=[
+    {v:totAS,l:'Actual S2s to date',c:s2col},{v:totPS,l:'Plan S2s (8 months)',c:'var(--tx)'},
+    {v:s2pct+'%',l:'of plan achieved',c:s2col},{v:Math.max(0,parseFloat((totPS-totAS).toFixed(1))),l:'S2s remaining',c:'var(--amber)'}
+  ].map(x=>`<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:9px 13px;flex:1;min-width:100px"><div style="font-size:18px;font-weight:700;color:${x.c}">${x.v}</div><div style="font-size:11px;color:var(--txm)">${x.l}</div></div>`).join('');
 
-  const cs2=document.getElementById('s2-chart');
-  if(s2Chart)s2Chart.destroy();
-  s2Chart=mkS2Chart('s2-chart',s2Plan,s2Act,cpArr,caArr);
+  // S2 SVG charts
+  const s2Ds=[{data:s2P,color:'#F5C84260'},{data:s2A.map(v=>v!==null?v:0),color:'#1a1a1a'},{data:cpA,color:'#BBF7D0',line:true},{data:caA,color:'#16A34A',line:true}];
+  svgBar(document.getElementById('s2-chart-wrap'),MO,s2Ds,{y2:true});
+  svgBar(document.getElementById('vs-s2-wrap'),MO,s2Ds,{y2:true});
 
-  // ── PLAN VS ACTUAL TAB ───────────────────────────────────────────────────
-  let vh='', vPS=0,vAS=0,vPM=0,vAM=0,vPS2=0,vAS2=0,vPR=0,vAR=0;
-  const vsSpP=[],vsSpA=[],vsRvP=[],vsRvA=[];
-
+  // VS tab
+  let vh='',vPS=0,vAS=0,vPM=0,vAM=0,vPS2=0,vAS2=0,vPR=0,vAR2=0;
+  const spPD=[],spAD=[],rvPD=[],rvAD=[];
   rows.forEach((r,i)=>{
-    const a=actuals[i]||{};
+    const a=act[i]||{};
     const asp=(a.liSp||0)+(a.gSp||0);
     const has=a.liSp!==null||a.mql!==null;
-    const spv=has?asp-r.totSpend:null;
-    const prv=r.fy27?r.won*ACV:null;
-    const arv=a.rev!==null?a.rev:null;
+    const spv=has?asp-r.tot:null,prv=r.fy?r.won*ACV:null,arv=a.rev!==null?a.rev:null;
     const rvv=(prv!==null&&arv!==null)?arv-prv:null;
-    vPS+=r.totSpend;vAS+=asp;vPM+=r.mql;if(a.mql!=null)vAM+=a.mql;
-    vPS2+=r.s2;if(a.s2!=null)vAS2+=a.s2;
-    if(r.fy27)vPR+=r.won*ACV;if(arv!=null)vAR+=arv;
-    vsSpP.push(r.totSpend);vsSpA.push(has?asp:null);
-    vsRvP.push(prv);vsRvA.push(arv);
-    const vc=(v,isM=false)=>v===null?'<td style="color:var(--text-muted)">—</td>'
-      :`<td class="${v>=0?'var-pos':'var-neg'}">${v>=0?'+':''}${isM?f(v):f(v)}</td>`;
-    const fyB=r.fy27?'<span class="badge bg">FY27</span>':'<span class="badge bb">FY28</span>';
-    vh+=`<tr class="${r.fy27?'':'fy28'}">
-      <td><strong>${r.m}</strong></td><td>${f(r.totSpend)}</td><td>${has?f(asp):'—'}</td>${vc(spv)}
-      <td>${f(r.pipe)}</td><td>${Math.round(r.mql)}</td><td>${a.mql!=null?a.mql:'—'}</td>
-      <td>${r.s2<1?r.s2.toFixed(1):Math.round(r.s2)}</td><td>${a.s2!=null?a.s2:'—'}</td>
-      <td>${prv!=null?f(prv):'—'}</td><td>${arv!=null?f(arv):'—'}</td>${vc(rvv,true)}<td>${fyB}</td></tr>`;
+    vPS+=r.tot;vAS+=asp;vPM+=r.mql;if(a.mql!=null)vAM+=a.mql;
+    vPS2+=r.s2;if(a.s2!=null)vAS2+=a.s2;if(r.fy)vPR+=r.won*ACV;if(arv!=null)vAR2+=arv;
+    spPD.push(r.tot);spAD.push(has?asp:null);rvPD.push(prv);rvAD.push(arv);
+    const vc=(v)=>v===null?'<td style="color:var(--txm)">—</td>':`<td class="${v>=0?'vp':'vn'}">${v>=0?'+':''}${f(v)}</td>`;
+    const fyb=r.fy?'<span class="bge b-g">FY27</span>':'<span class="bge b-b">FY28</span>';
+    vh+=`<tr class="${r.fy?'':'f8'}"><td><strong>${r.m}</strong></td><td>${f(r.tot)}</td><td>${has?f(asp):'—'}</td>${vc(spv)}<td>${f(r.pipe)}</td><td>${Math.round(r.mql)}</td><td>${a.mql!=null?a.mql:'—'}</td><td>${r.s2<1?r.s2.toFixed(1):Math.round(r.s2)}</td><td>${a.s2!=null?a.s2:'—'}</td><td>${prv!=null?f(prv):'—'}</td><td>${arv!=null?f(arv):'—'}</td>${vc(rvv)}<td>${fyb}</td></tr>`;
   });
-  document.getElementById('vs-body').innerHTML=vh;
-  document.getElementById('vs-foot').innerHTML=`<tr><td>Total</td><td>${f(vPS)}</td><td>${f(vAS)}</td><td></td><td></td>
-    <td>${Math.round(vPM)}</td><td>${Math.round(vAM)}</td><td>${Math.round(vPS2)}</td><td>${Math.round(vAS2)}</td>
-    <td>${f(vPR)}</td><td>${f(vAR)}</td><td></td><td></td></tr>`;
+  document.getElementById('vsb').innerHTML=vh;
+  document.getElementById('vsf').innerHTML=`<tr><td>Total</td><td>${f(vPS)}</td><td>${f(vAS)}</td><td></td><td></td><td>${Math.round(vPM)}</td><td>${Math.round(vAM)}</td><td>${Math.round(vPS2)}</td><td>${Math.round(vAS2)}</td><td>${f(vPR)}</td><td>${f(vAR2)}</td><td></td><td></td></tr>`;
 
-  if(vsS2Chart)vsS2Chart.destroy();
-  vsS2Chart=mkS2Chart('vs-s2-chart',s2Plan,s2Act,cpArr,caArr);
+  svgBar(document.getElementById('vs-sp-wrap'),MO,[{data:spPD,color:'#C8C8C0'},{data:spAD.map(v=>v!==null?v:0),color:'#1a1a1a'}]);
+  svgBar(document.getElementById('vs-rv-wrap'),MO,[{data:rvPD.map(v=>v||0),color:'#F5C842'},{data:rvAD.map(v=>v||0),color:'#16A34A'}]);
 
-  const ctx2=document.getElementById('vs-spend-chart').getContext('2d');
-  if(vsSpendChart)vsSpendChart.destroy();
-  vsSpendChart=new Chart(ctx2,{type:'bar',data:{labels:MO,datasets:[
-    {label:'Plan',data:vsSpP,backgroundColor:'#C8C8C0',borderRadius:3},
-    {label:'Actual',data:vsSpA,backgroundColor:'#1a1a1a',borderRadius:3}
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
-    scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{ticks:{callback:v=>'$'+Math.round(v/1000)+'k',font:{size:11}},grid:{color:'rgba(0,0,0,0.05)'}}}}});
-
-  const ctx3=document.getElementById('vs-rev-chart').getContext('2d');
-  if(vsRevChart)vsRevChart.destroy();
-  vsRevChart=new Chart(ctx3,{type:'bar',data:{labels:MO,datasets:[
-    {label:'Plan',data:vsRvP,backgroundColor:'#F5C842',borderRadius:3},
-    {label:'Actual',data:vsRvA,backgroundColor:'#16A34A',borderRadius:3}
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
-    scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{ticks:{callback:v=>'$'+Math.round(v/1000)+'k',font:{size:11}},grid:{color:'rgba(0,0,0,0.05)'}}}}});
-
-  const gpct=at>0?Math.round(vAR/at*100):0;
-  const gcol=gpct>=90?'var(--green)':gpct>=60?'var(--amber)':'var(--li-blue)';
-  document.getElementById('goal-track').innerHTML=`
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px">
-      <div class="metric"><div class="mval">${f(at)}</div><div class="mlbl">FY27 ads target</div></div>
-      <div class="metric"><div class="mval" style="color:${gcol}">${f(vAR)}</div><div class="mlbl">Actual revenue to date</div></div>
-      <div class="metric"><div class="mval" style="color:${gcol}">${gpct}%</div><div class="mlbl">of target achieved</div></div>
+  // goal tracking
+  const goalPct=at>0?Math.round(vAR2/at*100):0,goalCol=goalPct>=90?'var(--green)':goalPct>=60?'var(--amber)':'var(--li)';
+  document.getElementById('gt').innerHTML=`
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:14px">
+      <div class="mc"><div class="mv">${f(at)}</div><div class="ml">FY27 ads target</div></div>
+      <div class="mc"><div class="mv" style="color:${goalCol}">${f(vAR2)}</div><div class="ml">Actual revenue to date</div></div>
+      <div class="mc"><div class="mv" style="color:${goalCol}">${goalPct}%</div><div class="ml">of target achieved</div></div>
     </div>
-    <div style="background:var(--surface-3);border-radius:6px;height:14px;overflow:hidden;margin-bottom:8px">
-      <div style="height:100%;width:${Math.min(gpct,100)}%;background:${gcol};border-radius:6px;transition:width .4s"></div>
+    <div style="background:var(--surface-3);border-radius:5px;height:13px;overflow:hidden;margin-bottom:7px">
+      <div style="height:100%;width:${Math.min(goalPct,100)}%;background:${goalCol};border-radius:5px;transition:width .4s"></div>
     </div>
-    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-muted);margin-bottom:12px"><span>$0</span><span>Target: ${f(at)}</span></div>
-    <div style="font-size:12px;color:var(--text-secondary);line-height:1.7">
-      Plan generates <strong>${f(planRev)}</strong> in FY27 closes — 
-      <strong style="color:${planRev>=at?'var(--green)':'var(--amber)'}">${Math.round(planRev/at*100)}% of target</strong>.
-      ${vAR===0?'<br><span style="color:var(--amber)">⚠ No actuals yet — enter data in the Actuals tab as campaigns run.</span>':''}
-    </div>`;
+    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--txm);margin-bottom:11px"><span>$0</span><span>Target: ${f(at)}</span></div>
+    <div style="font-size:12px;color:var(--tx2);line-height:1.7">Plan generates <strong>${f(pr)}</strong> in FY27 closes — <strong style="color:${pr>=at?'var(--green)':'var(--amber)'}">${Math.round(pr/at*100)}% of target</strong>.${vAR2===0?' <span style="color:var(--amber)">⚠ No actuals yet — enter data in the Actuals tab.</span>':''}</div>`;
 }
 
-document.querySelectorAll('input[type=range]').forEach(el=>el.addEventListener('input',()=>{
-  updateAll.skipForm=true; updateAll(); updateAll.skipForm=false;
-}));
-updateAll.skipForm = false;
-updateAll();
-
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    [planChart, s2Chart, vsS2Chart, vsSpendChart, vsRevChart].forEach(c => { if(c) c.resize(); });
-  }, 200);
-});
+document.querySelectorAll('input[type=range]').forEach(el=>el.addEventListener('input',()=>{skipForm=true;upd();skipForm=false;}));
+upd();
 </script>
 
 
