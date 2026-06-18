@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///Users/adenademonte/Downloads/index_26.html -->
+<!-- saved from url=(0050)file:///Users/adenademonte/Downloads/index_27.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,7 +90,8 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
 .bb { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
 .bgr { background: var(--surface-3); color: var(--text-muted); border: 1px solid var(--border); }
 
-.chart-wrap { position: relative; width: 100%; height: 210px; margin: 8px 0; }
+.chart-wrap { position: relative; width: 100%; height: 220px; margin: 8px 0; }
+.chart-wrap canvas { display: block; }
 .chart-leg { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
 .leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text-secondary); }
 .leg-sq { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
@@ -127,8 +128,8 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
     <span class="header-sub">Commercial · FY27</span>
   </div>
   <div class="header-tabs">
-    <button class="tab-btn" onclick="switchTab(&#39;plan&#39;,this)">Plan</button>
-    <button class="tab-btn active" onclick="switchTab(&#39;actuals&#39;,this)">Actuals</button>
+    <button class="tab-btn active" onclick="switchTab(&#39;plan&#39;,this)">Plan</button>
+    <button class="tab-btn" onclick="switchTab(&#39;actuals&#39;,this)">Actuals</button>
     <button class="tab-btn" onclick="switchTab(&#39;vs&#39;,this)">Plan vs. Actual</button>
   </div>
   <span class="fy-badge">FY27</span>
@@ -214,7 +215,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
   </div>
 
   <!-- PLAN TAB -->
-  <div id="tab-plan" class="tab-panel">
+  <div id="tab-plan" class="tab-panel active">
     <div class="card">
       <div class="card-header"><h3>Monthly plan — FY27 closes highlighted</h3></div>
       <div class="table-wrap">
@@ -296,7 +297,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
           <div class="leg-item"><div class="leg-sq" style="background:#C8C8C0"></div>FY28 pipeline</div>
           <div class="leg-item"><div class="leg-sq" style="background:var(--cassava);height:3px;border-radius:0;align-self:center"></div>Pace target</div>
         </div>
-        <div class="chart-wrap"><canvas id="plan-chart" style="box-sizing: border-box; display: block; height: 0px; width: 0px;" width="0" height="0"></canvas></div>
+        <div class="chart-wrap"><canvas id="plan-chart" width="1600" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 800px;"></canvas></div>
       </div>
     </div>
     <div class="card">
@@ -375,7 +376,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
   </div>
 
   <!-- ACTUALS TAB -->
-  <div id="tab-actuals" class="tab-panel active">
+  <div id="tab-actuals" class="tab-panel">
     <div class="card">
       <div class="card-header"><h3>S2 opps — plan vs. actual per month</h3><span style="font-size:11px;color:var(--text-muted);margin-left:auto">Enter actuals below to populate</span></div>
       <div style="padding:14px 16px">
@@ -385,7 +386,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
           <div class="leg-item"><div class="leg-sq" style="background:#BBF7D0;height:3px;border-radius:0;align-self:center"></div>Cumulative plan</div>
           <div class="leg-item"><div class="leg-sq" style="background:var(--green);height:3px;border-radius:0;align-self:center"></div>Cumulative actual</div>
         </div>
-        <div class="chart-wrap"><canvas id="s2-chart" style="box-sizing: border-box; display: block; height: 210px; width: 778px;" width="1556" height="420"></canvas></div>
+        <div class="chart-wrap"><canvas id="s2-chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
         <div id="s2-summary" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px"><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;flex:1;min-width:110px">
     <div style="font-size:18px;font-weight:700;color:var(--red)">0</div>
     <div style="font-size:11px;color:var(--text-muted)">Actual S2s to date</div></div><div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;flex:1;min-width:110px">
@@ -503,7 +504,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
           <div class="leg-item"><div class="leg-sq" style="background:#BBF7D0;height:3px;border-radius:0;align-self:center"></div>Cum. plan</div>
           <div class="leg-item"><div class="leg-sq" style="background:var(--green);height:3px;border-radius:0;align-self:center"></div>Cum. actual</div>
         </div>
-        <div class="chart-wrap"><canvas id="vs-s2-chart" style="box-sizing: border-box; display: block; height: 0px; width: 0px;" width="0" height="0"></canvas></div>
+        <div class="chart-wrap"><canvas id="vs-s2-chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
       </div>
     </div>
     <div class="card">
@@ -557,7 +558,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
           <div class="leg-item"><div class="leg-sq" style="background:#C8C8C0"></div>Plan</div>
           <div class="leg-item"><div class="leg-sq" style="background:var(--cacao)"></div>Actual</div>
         </div>
-        <div class="chart-wrap"><canvas id="vs-spend-chart" style="box-sizing: border-box; display: block; height: 0px; width: 0px;" width="0" height="0"></canvas></div>
+        <div class="chart-wrap"><canvas id="vs-spend-chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
       </div>
     </div>
     <div class="card">
@@ -567,7 +568,7 @@ tfoot tr:last-child td { color: var(--text-muted); font-weight: 400; }
           <div class="leg-item"><div class="leg-sq" style="background:var(--cassava)"></div>Plan</div>
           <div class="leg-item"><div class="leg-sq" style="background:var(--green)"></div>Actual</div>
         </div>
-        <div class="chart-wrap"><canvas id="vs-rev-chart" style="box-sizing: border-box; display: block; height: 0px; width: 0px;" width="0" height="0"></canvas></div>
+        <div class="chart-wrap"><canvas id="vs-rev-chart" width="0" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas></div>
       </div>
     </div>
     <div class="card">
@@ -675,7 +676,7 @@ function mkS2Chart(id, planData, actData, cumPlan, cumAct) {
   ]}, options:{ responsive:true, maintainAspectRatio:false,
     plugins:{ legend:{display:false} },
     scales:{
-      x:{ stacked:false, grid:{display:false}, ticks:{font:{size:11}} },
+      x:{ grid:{display:false}, ticks:{font:{size:11}} },
       y:{ position:'left', ticks:{font:{size:10}}, grid:{color:'rgba(0,0,0,0.05)'} },
       y2:{ position:'right', ticks:{font:{size:10}}, grid:{display:false} }
     }
