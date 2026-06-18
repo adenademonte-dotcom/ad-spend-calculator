@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///Users/adenademonte/Downloads/index_15.html -->
+<!-- saved from url=(0050)file:///Users/adenademonte/Downloads/index_12.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -160,8 +160,8 @@ tfoot tr:last-child td{color:var(--text-muted);font-weight:400}
   </div>
   <div class="header-tabs">
     <button class="tab-btn" onclick="switchTab(&#39;plan&#39;)">Plan</button>
-    <button class="tab-btn" onclick="switchTab(&#39;actuals&#39;)">Actuals</button>
-    <button class="tab-btn active" onclick="switchTab(&#39;vs&#39;)">Plan vs. Actual</button>
+    <button class="tab-btn active" onclick="switchTab(&#39;actuals&#39;)">Actuals</button>
+    <button class="tab-btn" onclick="switchTab(&#39;vs&#39;)">Plan vs. Actual</button>
   </div>
   <span class="fy-badge">FY27</span>
 </header>
@@ -469,7 +469,7 @@ tfoot tr:last-child td{color:var(--text-muted);font-weight:400}
     </div>
 
     <!-- ── TAB: ACTUALS ── -->
-    <div id="tab-actuals" class="tab-panel">
+    <div id="tab-actuals" class="tab-panel active">
 
 
       <div class="card">
@@ -484,7 +484,7 @@ tfoot tr:last-child td{color:var(--text-muted);font-weight:400}
             <div class="legend-item"><div class="legend-sq" style="background:var(--green-border);height:3px;border-radius:0;align-self:center"></div>Cumulative plan</div>
             <div class="legend-item"><div class="legend-sq" style="background:var(--green);height:3px;border-radius:0;align-self:center"></div>Cumulative actual</div>
           </div>
-          <div class="chart-wrap"><canvas id="s2-chart" role="img" aria-label="S2 opps plan vs actual per month" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+          <div class="chart-wrap"><canvas id="s2-chart" role="img" aria-label="S2 opps plan vs actual per month" height="420" style="display: block; box-sizing: border-box; height: 210px; width: 798px;" width="1596"></canvas></div>
           <div id="s2-summary" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;font-size:12px">
     <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;flex:1;min-width:120px">
       <div style="font-size:18px;font-weight:700;color:var(--red)">0</div>
@@ -624,7 +624,7 @@ tfoot tr:last-child td{color:var(--text-muted);font-weight:400}
     </div>
 
     <!-- ── TAB: PLAN VS ACTUAL ── -->
-    <div id="tab-vs" class="tab-panel active">
+    <div id="tab-vs" class="tab-panel">
 
       <div class="card">
         <div class="card-header"><h3>Plan vs. actual — month by month</h3></div>
@@ -754,7 +754,7 @@ tfoot tr:last-child td{color:var(--text-muted);font-weight:400}
             <div class="legend-item"><div class="legend-sq" style="background:#BBF7D0;height:3px;border-radius:0;align-self:center"></div>Cumulative plan</div>
             <div class="legend-item"><div class="legend-sq" style="background:var(--green);height:3px;border-radius:0;align-self:center"></div>Cumulative actual</div>
           </div>
-          <div class="chart-wrap"><canvas id="vs-s2-chart" role="img" aria-label="S2 opps plan vs actual per month" height="420" style="display: block; box-sizing: border-box; height: 210px; width: 1096px;" width="2193"></canvas></div>
+          <div class="chart-wrap"><canvas id="vs-s2-chart" role="img" aria-label="S2 opps plan vs actual per month" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
         </div>
       </div>
 
@@ -765,7 +765,7 @@ tfoot tr:last-child td{color:var(--text-muted);font-weight:400}
             <div class="legend-item"><div class="legend-sq" style="background:#C8C8C0"></div>Plan spend</div>
             <div class="legend-item"><div class="legend-sq" style="background:var(--cacao)"></div>Actual spend</div>
           </div>
-          <div class="chart-wrap"><canvas id="vs-spend-chart" height="420" style="display: block; box-sizing: border-box; height: 210px; width: 1096px;" width="2193"></canvas></div>
+          <div class="chart-wrap"><canvas id="vs-spend-chart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
         </div>
       </div>
 
@@ -776,7 +776,7 @@ tfoot tr:last-child td{color:var(--text-muted);font-weight:400}
             <div class="legend-item"><div class="legend-sq" style="background:var(--cassava)"></div>Plan revenue</div>
             <div class="legend-item"><div class="legend-sq" style="background:var(--green)"></div>Actual revenue</div>
           </div>
-          <div class="chart-wrap"><canvas id="vs-rev-chart" height="420" style="display: block; box-sizing: border-box; height: 210px; width: 1096px;" width="2193"></canvas></div>
+          <div class="chart-wrap"><canvas id="vs-rev-chart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
         </div>
       </div>
 
@@ -815,7 +815,7 @@ tfoot tr:last-child td{color:var(--text-muted);font-weight:400}
   AppZen Growth &amp; Lifecycle Marketing · AP Inbox Commercial Segment · FY27 (Feb 2026 – Jan 2027) · Internal use only
 </footer>
 
-<script src="./INDEXs_files/chart.umd.js"></script>
+<script src="./index_files/chart.umd.js"></script>
 <script>
 // ─── Constants ────────────────────────────────────────────────────────────────
 const MO  = ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan'];
